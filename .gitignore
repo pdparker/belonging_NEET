@@ -2,6 +2,16 @@
 # History files
 .Rhistory
 .Rapp.history
+.Rprofile
+
+# Mac files
+.DS_Store
+
+# globals
+common.yaml
+
+#knited 
+*.tex
 
 # Session Data files
 .RData
