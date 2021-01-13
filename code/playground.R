@@ -2,7 +2,6 @@ library(curl)
 library(XML)
 library(readit)
 
-pw <- 'SAWIM-HLRDN-OURZX-DPWPJ'
 
 listFiles <- function(username, password, relPath = "/", dav = "https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/") {
      uri <- URLencode(paste(dav, relPath, sep=""))
