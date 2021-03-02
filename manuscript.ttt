@@ -1,0 +1,157 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+\caption{\label{tab:tab-descript}Descriptive Statistics.}
+\centering
+\begin{tabular}[t]{lccc}
+\toprule
+Characteristic & NEET, N = 2,695 & not NEET, N = 14,997 & p-value\\
+\midrule
+Girl &  &  & 0.2\\
+\hspace{1em}Boy & 1,353 (50\%) & 7,754 (52\%) & \\
+\hspace{1em}Girl & 1,342 (50\%) & 7,243 (48\%) & \\
+Indigenous &  &  & <0.001\\
+\hspace{1em}Indigenous & 272 (10\%) & 718 (4.8\%) & \\
+\addlinespace
+\hspace{1em}non-Indigenous & 2,423 (90\%) & 14,279 (95\%) & \\
+Immigrant Background &  &  & 0.6\\
+\hspace{1em}Immigrant & 582 (22\%) & 3,218 (22\%) & \\
+\hspace{1em}non-Immigrnat & 2,043 (78\%) & 11,602 (78\%) & \\
+\hspace{1em}Unknown & 70 & 177 & \\
+\addlinespace
+Urban &  &  & 0.2\\
+\hspace{1em}Provincial & 1,199 (44\%) & 6,454 (43\%) & \\
+\hspace{1em}Urban & 1,496 (56\%) & 8,543 (57\%) & \\
+SES & -0.13 (-0.65, 0.49) & 0.12 (-0.37, 0.66) & <0.001\\
+\hspace{1em}Unknown & 10 & 29 & \\
+\addlinespace
+Achievement & 0.00 (-0.77, 0.71) & 0.40 (-0.28, 1.01) & <0.001\\
+School Avg Achievement & -0.05 (-0.37, 0.27) & 0.06 (-0.24, 0.41) & <0.001\\
+School Avg. SES & -0.13 (-0.36, 0.20) & 0.03 (-0.25, 0.32) & <0.001\\
+\bottomrule
+\multicolumn{4}{l}{\textsuperscript{1} n (\%); Median (IQR)}\\
+\multicolumn{4}{l}{\textsuperscript{2} Pearson's Chi-squared test; Wilcoxon rank sum test}\\
+\end{tabular}
+\end{table*}
+\efloatseparator
+ 
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:tab-belong}Predictors of School Belonging.}
+
+\begin{tabular}{llll}
+\toprule
+Parameter & \multicolumn{1}{c}{Beta} & \multicolumn{1}{c}{-95\% CI} & \multicolumn{1}{c}{+95\% CI}\\
+\midrule
+Intercept & -0.11 & -0.14 & -0.07\\
+Achievement (SD Units) & 0.01 & 0.00 & 0.02\\
+Urban & 0.01 & 0.00 & 0.02\\
+SES (SD Units) & 0.12 & 0.10 & 0.13\\
+Gender & 0.15 & 0.13 & 0.16\\
+Urban & 0.07 & 0.04 & 0.11\\
+Indigenous & 0.05 & 0.02 & 0.08\\
+Immigrant & 0.06 & 0.04 & 0.08\\
+School Average SES (SD Units) & 0.01 & -0.04 & 0.07\\
+School Average Achievement (Sd Units) & 0.03 & -0.02 & 0.07\\
+Cohort (2015) & -0.20 & -0.23 & -0.17\\
+Random Intercept: School & 0.04 &  & \\
+Residual Variance & 0.85 &  & \\
+School ICC & 0.05 &  & \\
+\bottomrule
+\end{tabular}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
+\efloatseparator
+ 
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:tab-neet}Model Predicting NEET Status.}
+
+\begin{tabular}{llll}
+\toprule
+Parameter & \multicolumn{1}{c}{Odds Ratio} & \multicolumn{1}{c}{-95\% CI} & \multicolumn{1}{c}{+95\% CI}\\
+\midrule
+Intercept & 0.02 & 0.02 & 0.02\\
+School Belonging (SD Units) & 0.84 & 0.81 & 0.87\\
+Time Wave (1-Year Units) & 1.26 & 1.23 & 1.29\\
+Achievement (SD Units) & 0.67 & 0.64 & 0.71\\
+Urban & 0.67 & 0.64 & 0.71\\
+SES (SD Units) & 0.83 & 0.78 & 0.89\\
+Gender & 1.23 & 1.12 & 1.36\\
+Urban & 1.02 & 0.92 & 1.13\\
+Indigenous & 1.80 & 1.55 & 2.08\\
+Immigrant & 1.05 & 0.96 & 1.14\\
+School Average SES (SD Units) & 0.64 & 0.55 & 0.75\\
+School Average Achievement (Sd Units) & 1.19 & 1.05 & 1.36\\
+Cohort (2015) & 1.64 & 1.48 & 1.81\\
+Random Intercept: Individual & 1.38 &  & \\
+Random Intercept: School & 0.17 &  & \\
+\bottomrule
+\addlinespace
+\end{tabular}
+
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} Random intercepts are not in odds-ratio units.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
+\efloatseparator
+ 
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:tab-grad}Model Predicting NEET Status (Controlling for High-School Graduation).}
+
+\begin{tabular}{llll}
+\toprule
+Parameter & \multicolumn{1}{c}{Odds Ratio} & \multicolumn{1}{c}{-95\% CI} & \multicolumn{1}{c}{+95\% CI}\\
+\midrule
+Intercept & 0.02 & 0.02 & 0.02\\
+High-School Graduate & 6.39 & 5.75 & 7.10\\
+Time Wave (1-Year Units) & 0.81 & 0.77 & 0.85\\
+Achievement (SD Units) & 0.59 & 0.56 & 0.62\\
+Urban & 0.59 & 0.56 & 0.62\\
+SES (SD Units) & 0.81 & 0.76 & 0.87\\
+Gender & 1.22 & 1.08 & 1.38\\
+Urban & 0.92 & 0.82 & 1.03\\
+Indigenous & 1.83 & 1.53 & 2.20\\
+Immigrant & 0.99 & 0.91 & 1.08\\
+School Belonging (SD Units) & 0.82 & 0.79 & 0.85\\
+Cohort (2015) & 1.49 & 1.32 & 1.68\\
+School Average SES (SD Units) & 0.71 & 0.59 & 0.86\\
+School Average Achievement (Sd Units) & 1.14 & 0.99 & 1.32\\
+Random Intercept: Individual & 2.31 &  & \\
+Random Intercept: School & 0.23 &  & \\
+\bottomrule
+\addlinespace
+\end{tabular}
+
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} Random intercepts are not in odds-ratio units.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}

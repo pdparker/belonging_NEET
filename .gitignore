@@ -4,6 +4,15 @@
 .Rapp.history
 .Rprofile
 
+_targets/*
+
+_target/
+manuscript_files/
+
+.fff
+.md
+.ttt
+.log
 # Mac files
 .DS_Store
 
