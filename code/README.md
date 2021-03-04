@@ -1,5 +1,4 @@
-# Code Folder
+# Read Me
 
-Use this folder for storing all code. Include subfolders as needed, if there are a lot of analysis scripts.
+In order to blind the submission the manuscript.Rmd file calls a gitignored common yaml file that contains author information. Thus if you want to reproduce the manuscript you will have to supply your own yaml file.  
 
-For information on how to structure analysis and results look [here](https://www.notion.so/motivationbehaviour/Workflow-Results-5d0ace5ebb074bcf92813e25bbf437be).
