@@ -10,15 +10,6 @@ keywords          : "school belonging; NEET; emerging adults; longitudinal"
 abstract: |
   Low school belonging and Not (being) in Employment, Education, or Training (NEET) are both signs of social exclusion. Yet little research has considered whether school belonging is a risk factor for NEET. Using two longitudinal cohorts from Australia (*N* = 17,692; 51% Boys), we explore this relationship. Controlling for a range of individual and school level covariates, we find that school belonging at age 15 is a consistent and practically significant predictor of NEET status at ages 16-20. We found that this relationship is not the product of school belonging lowering the chances of students graduating high-school. Rather, school belonging had a unique impact beyond graduation. Given the costs of NEET, school belonging is of significant policy concern.
 
-authornote: |
-  We thank NCVER who provided the data for this paper. In particular, we thank Ronnie Semo for her guidance in developing the NEET index.
-  \addORCIDlink{Philip D. Parker}{0000-0002-4604-8566};
-  \addORCIDlink{Kelly-Ann Allen}{0000-0002-6813-0034};
-  \addORCIDlink{Rhiannon B. Parker}{0000-0003-2156-3980};
-  \addORCIDlink{Jiesi Guo}{0000-0003-2102-803X};
-  \addORCIDlink{Herbert W. Marsh}{0000-0002-1078-9717};
-  \addORCIDlink{Geetanjali Basarkod}{0000-0003-3708-2751};
-    \addORCIDlink{Theresa Dicke}{0000-0001-8868-2242};
 
 csl               : "apa7.csl"
 documentclass     : "apa7"
@@ -127,8 +118,8 @@ Achievement & 0.00 (-0.77, 0.71) & 0.40 (-0.28, 1.01) & <0.001\\
 School Avg Achievement & -0.05 (-0.37, 0.27) & 0.06 (-0.24, 0.41) & <0.001\\
 School Avg. SES & -0.13 (-0.36, 0.20) & 0.03 (-0.25, 0.32) & <0.001\\
 \bottomrule
-\multicolumn{4}{l}{\textsuperscript{1} n (\%); Median (IQR)}\\
-\multicolumn{4}{l}{\textsuperscript{2} Pearson's Chi-squared test; Wilcoxon rank sum test}\\
+\multicolumn{4}{l}{\rule{0pt}{1em}\textsuperscript{1} n (\%); Median (IQR)}\\
+\multicolumn{4}{l}{\rule{0pt}{1em}\textsuperscript{2} Pearson's Chi-squared test; Wilcoxon rank sum test}\\
 \end{tabular}
 \end{table}
 
@@ -369,7 +360,7 @@ We set out to test if school belonging was a risk factor for NEET status using t
 
 ## Predictors of School Belonging
 
-Academic achievement was a significant predictor of school belonging in the current research but the practical significance of this association was trivial. Achievement has long been considered to have a reciprocal relationship with belonging, yet this likely varies by nation depending on the degree to which high achievement is socially valued [@oecd_2019]. The lack of relationship between achievement and belonging in this study---and as also found in PISA reports on Australia [@oecd_2019]---may imply that, in Australia, children's sense of belonging is not contingent on their academic prowess. This may generalise to other Anglophone countries. Meta-analyses where most studies were from English speaking Western countries found only a small association between achievement and belonging [@korpershoek2019, @allen2016]. As we note below, academic achievement was a strong predictor of school graduation.
+Academic achievement was a significant predictor of school belonging in the current research but the practical significance of this association was trivial. Achievement has long been considered to have a reciprocal relationship with belonging, yet this likely varies by nation depending on the degree to which high achievement is socially valued [@oecd_2019]. The lack of relationship between achievement and belonging in this study---and as also found in PISA reports on Australia [@oecd_2019]---may imply that, in Australia, children's sense of belonging is not contingent on their academic prowess. This may generalise to other Anglophone countries. Meta-analyses where most studies were from English speaking Western countries found only a small association between achievement and belonging [@korpershoek2019, [@allen2016]]. As we note below, academic achievement was a strong predictor of school graduation.
 
 Demographic predictors were much more notable predictors of school belonging. Youth who were from urban contexts, girls, immigrants, and high SES youth all had small, but meaningful positive relationships with belonging. This is consistent with previous research [@europeancommission.jointresearchcentre.2015] and with previous work with PISA reports [@oecd_2019] that forms the first wave of the LSAY data. Our research showed that Indigenous status was a positive predictor of school belonging. This is important in countering deficit-orientated language about Indigenous children and their connection to education [@craven2016]. Indeed, a focus on what drives Indigenous students to stay at school and feel a sense of belonging may have more applied impact towards addressing Indigenous educational disadvantage than a focus on reasons for non-attendance or early school drop out. While this is a positive story, we acknowledge that this result was present while controlling for other covariates including SES. Part of the disadvantage that indigenous students face in education is conveyed through a history of marginalization that has resulted in Indigenous Australians having lower, on average, SES. In total (i.e., when not controlling for other variables) Indigenous students have lower levels of school belonging [@debortoli_2018]. As such, these results should be interpreted with care, but should serve as an incentive to consider the role that belonging might play in helping Indigenous students flourish in school.
 

@@ -30,8 +30,8 @@ Achievement & 0.00 (-0.77, 0.71) & 0.40 (-0.28, 1.01) & <0.001\\
 School Avg Achievement & -0.05 (-0.37, 0.27) & 0.06 (-0.24, 0.41) & <0.001\\
 School Avg. SES & -0.13 (-0.36, 0.20) & 0.03 (-0.25, 0.32) & <0.001\\
 \bottomrule
-\multicolumn{4}{l}{\textsuperscript{1} n (\%); Median (IQR)}\\
-\multicolumn{4}{l}{\textsuperscript{2} Pearson's Chi-squared test; Wilcoxon rank sum test}\\
+\multicolumn{4}{l}{\rule{0pt}{1em}\textsuperscript{1} n (\%); Median (IQR)}\\
+\multicolumn{4}{l}{\rule{0pt}{1em}\textsuperscript{2} Pearson's Chi-squared test; Wilcoxon rank sum test}\\
 \end{tabular}
 \end{table*}
 \efloatseparator
