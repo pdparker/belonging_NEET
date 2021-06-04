@@ -1,0 +1,16 @@
+---
+floatsintext      : no
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+linenumbers       : yes
+mask              : yes
+draft             : yes
+
+documentclass     : "apa7"
+classoption       : "man"
+
+authornote: |
+  
+
+---

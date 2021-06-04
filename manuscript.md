@@ -1,10 +1,10 @@
 ---
 title             : "School Belonging Predicts whether an Emerging Adult will be Not in Education, Employment, or Training (NEET) after School"
 shorttitle        : "School Belonging and NEET"
-wordcount         : "`r wordcountaddin::word_count('manuscript.Rmd')`"
+wordcount         : "6384"
 keywords          : "school belonging; NEET; emerging adults; longitudinal"
 abstract: |
-  Youth with low school belonging or who are Not (being) in Employment, Education, or Training (NEET) are at the margins of critical social institutions. Yet little research has considered whether school belonging is a risk factor for later NEET. Using two longitudinal cohorts from Australia (*N* = `r targets::tar_load(combined_data); prettyNum(nrow(combined_data),,big.mark=",",scientific=FALSE)`; 51% Boys), we explore this relationship. Controlling for a range of individual and school level covariates, we find that school belonging at age 15 is a consistent and practically significant predictor of NEET status at ages 16-20. We found that this relationship is not the product of school belonging lowering the chances of students graduating high-school. Rather, school belonging had a unique impact beyond graduation. Given the costs of NEET, school belonging is of significant policy concern.
+  Youth with low school belonging or who are Not (being) in Employment, Education, or Training (NEET) are at the margins of critical social institutions. Yet little research has considered whether school belonging is a risk factor for later NEET. Using two longitudinal cohorts from Australia (*N* = 14,082; 51% Boys), we explore this relationship. Controlling for a range of individual and school level covariates, we find that school belonging at age 15 is a consistent and practically significant predictor of NEET status at ages 16-20. We found that this relationship is not the product of school belonging lowering the chances of students graduating high-school. Rather, school belonging had a unique impact beyond graduation. Given the costs of NEET, school belonging is of significant policy concern.
 csl               : "apa7.csl"
 documentclass     : "apa7"
 output:
@@ -21,54 +21,7 @@ header-includes:
   - \note{\clearpage}
 ---
 
-```{r setup, include = FALSE}
-# Create Reference List
-library("papaja")
-library("tidyMB")
-library("targets")
-library(fuzzyjoin)
-library(broom.mixed)
-r_refs("r-references.bib")
 
-
-render_appendix("appendix.Rmd")
-
-
-# Set default Knitr Options
-knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE, dpi = 300)
-
-
-# Set tidyverse to quiet
-library("tidyverse")
-options(tidyverse.quiet = TRUE)
-tar_load(combined_data)
-
-
-gender_percent = combined_data$sex %>% table %>% prop.table
-
-
-# Name Cleaner
-name_cleaner <- dplyr::tribble(
-  ~r_word, ~Parameter,
-  "(Intercept)", "Intercept",
-  "belong", "School Belonging (SD Units)",
-  "year", "Time Wave (1-Year Units)",
-  "pc", "Achievement (SD Units)",
-  "escs", "SES (SD Units)",
-  "sex", "Gender",
-  "loc", "Urban",
-  "indig", "Indigenous",
-  "immig", "Immigrant",
-  "sch_escs", "School Average SES (SD Units)",
-  "sch_pc", "School Average Achievement (Sd Units)",
-  "cohortcohort_2015", "Cohort (2015)",
-  "Intercept~~Intercept|schid", "Random Intercept: School",
-  "Intercept~~Intercept|id", "Random Intercept: Individual",
-  "Residual~~Residual", "Residual Variance",
-  "ICC|schid", "School ICC",
-  "sch_grad", "High-School Graduate"
-)
-```
 
 The transition from compulsory schooling to further education or employment is one of the most critical, complex, and increasingly challenging of all developmental transitions [@dietrich2012]. Outcomes of this period have lifelong implications and thus transition success is crucial [@zarrett2006]. A transition of particular concern is those youth who do not transition into further employment, education, or training (NEET) after compulsory school. Youth who are NEET are at far greater lifetime risk of social exclusion with significant individual, social, and economic costs [@bynner2002]. As such, NEET remains a central concern for policy [@europeancommission.jointresearchcentre.2015; @woodhouse_2021]. Although considerable research has noted the institutional, social status, and academic achievement patterns of NEET youth [@bynner2002; @europeancommission.jointresearchcentre.2015], little research [c.f. @muir2015young] has considered the role of school belonging experiences. In this paper, we suggest that school belonging may be a critical precursor to NEET status.
 
@@ -120,32 +73,55 @@ Based on the available literature and theory, we advance the following research 
 
 ## Participants
 
-There was a total of `r prettyNum(nrow(combined_data),big.mark=",",scientific=FALSE)` participants (`r scales::percent(gender_percent[2], accuracy = .01)` female) across the 2003 and 2015 LSAY cohorts. Sample statistics can be found (broken down by whether the participant was *ever* NEET at any stage across the years of interest) in Table \@ref(tab:tab-descript).
+There was a total of 14,082 participants (48.52% female) across the 2003 and 2015 LSAY cohorts. Sample statistics can be found (broken down by whether the participant was *ever* NEET at any stage across the years of interest) in Table \@ref(tab:tab-descript).
 
 Data were from two cohorts (2003 and 2015) of the Longitudinal Study of Australian Youth (LSAY). The LSAY cohort databases are a longitudinal extension of the Programme for International Student Assessment (PISA) which follows PISA participants yearly for 10 years. LSAY is the longitudinal extension of the Australian component of the Programme for International Student Assessment (PISA) samples in 2003 and 2015. PISA represents the first wave of the LSAY cohorts. Australian participants of PISA were given the option of signing up to LSAY voluntarily after completing the PISA tests and questionnaire. Unsurprisingly, many chose not to and this account for the smaller LSAY sample size from the PISA sample size. We defined the sample of interest as all those PISA participants that agreed to take part in LSAY and participated in the first LSAY wave of data collection. This represented about 50% of the PISA sample. We ran sensitivity analysis with the full PISA sample with missing values imputed and results were very similar. A data dictionary and full information on LSAY data collection methods can be found at the [LSAY website](http://lsay.edu.au/).
 
 (ref:descriptives) Descriptive Statistics.
 
-```{r tab-descript, results='asis'}
-library(gtsummary)
-library(kableExtra)
-tar_load(table_one)
-table_one %>% 
-  as_kable_extra(caption = "(ref:descriptives)",
-                             format = "latex",
-                             booktabs = TRUE,
-                             align = c("l", "c", "c", "c")) %>%
-    add_footnote("This table is based on the unimputed data. The data summarises scores for participants who were NEET at any stage versus those who were never NEET.")
-```
+\begin{table}
+
+\caption{(\#tab:tab-descript)(ref:descriptives)}
+\centering
+\begin{tabular}[t]{lccc}
+\toprule
+Characteristic & NEET, N = 1,323 & not NEET, N = 7,670 & p-value\\
+\midrule
+Girl &  &  & 0.4\\
+\hspace{1em}Boy & 678 (51\%) & 4,026 (52\%) & \\
+\hspace{1em}Girl & 645 (49\%) & 3,644 (48\%) & \\
+Indigenous &  &  & <0.001\\
+\hspace{1em}Indigenous & 134 (10\%) & 345 (4.5\%) & \\
+\addlinespace
+\hspace{1em}non-Indigenous & 1,189 (90\%) & 7,325 (96\%) & \\
+Immigrant Background &  &  & 0.067\\
+\hspace{1em}Immigrant & 300 (23\%) & 1,590 (21\%) & \\
+\hspace{1em}non-Immigrnat & 990 (77\%) & 5,982 (79\%) & \\
+\hspace{1em}Unknown & 33 & 98 & \\
+\addlinespace
+Urban &  &  & 0.2\\
+\hspace{1em}Provincial & 557 (42\%) & 3,087 (40\%) & \\
+\hspace{1em}Urban & 766 (58\%) & 4,583 (60\%) & \\
+SES & 0.26 (-0.44, 0.84) & 0.47 (-0.11, 0.99) & <0.001\\
+\hspace{1em}Unknown & 10 & 29 & \\
+\addlinespace
+Achievement & -0.06 (-0.88, 0.62) & 0.28 (-0.39, 0.87) & <0.001\\
+School Avg Achievement & -0.06 (-0.41, 0.33) & 0.06 (-0.26, 0.39) & <0.001\\
+School Avg. SES & 0.19 (-0.13, 0.57) & 0.38 (0.03, 0.65) & <0.001\\
+\hspace{1em}Unknown & 0 & 1 & \\
+\bottomrule
+\multicolumn{4}{l}{\rule{0pt}{1em}\textsuperscript{1} n (\%); Median (IQR)}\\
+\multicolumn{4}{l}{\rule{0pt}{1em}\textsuperscript{2} Pearson's Chi-squared test; Wilcoxon rank sum test}\\
+\multicolumn{4}{l}{\textsuperscript{a} This table is based on the unimputed data. The data summarises scores for}\\
+\multicolumn{4}{l}{participants who were NEET at any stage versus those who were never NEET.}\\
+\end{tabular}
+\end{table}
 
 Participants did not have a fixed NEET state. Most participants were never NEET. Of those that were NEET most moved in and out of this status across the four years of interest (see Figure \@ref(fig:alluvial)).
 
 (ref:alluvial-cap) NEET status changes across four years.
 
-```{r, alluvial, fig.cap = "(ref:alluvial-cap)"}
-tar_load(alluvial)
-alluvial
-```
+![(\#fig:alluvial)(ref:alluvial-cap)](manuscript_files/figure-latex/alluvial-1.pdf) 
 
 ## Measures
 
@@ -219,143 +195,101 @@ A redacted version of the protocol for this paper can be found in supplementary 
 
 (ref:belong-result) Predictors of School Belonging.
 
-```{r tab-belong, results='asis'}
-tar_load(belong_model)
 
+\begin{table}[tbp]
 
-belong_aov <- belong_model$comparison$test %>%
-  as_tibble() %>%
-  mutate(across(.fns = ~round(.,3))) %>%
-  rename(p = `P(>F)`)
+\begin{center}
+\begin{threeparttable}
 
+\caption{\label{tab:tab-belong}(ref:belong-result)}
 
-model1 <- mitml::testEstimates(belong_model$M1, var.comp=TRUE)
-c <- model1$estimate
-ci <- confint(model1)
+\begin{tabular}{llll}
+\toprule
+Parameter & \multicolumn{1}{c}{Beta} & \multicolumn{1}{c}{-95\% CI} & \multicolumn{1}{c}{+95\% CI}\\
+\midrule
+Intercept & -0.10 & -0.14 & -0.06\\
+Achievement (SD Units) & 0.00 & -0.02 & 0.02\\
+Urban & 0.00 & -0.02 & 0.02\\
+SES (SD Units) & 0.10 & 0.08 & 0.13\\
+Gender & 0.12 & 0.09 & 0.15\\
+Urban & 0.09 & 0.05 & 0.13\\
+Indigenous & -0.02 & -0.08 & 0.05\\
+Immigrant & 0.04 & 0.00 & 0.08\\
+School Average SES (SD Units) & -0.01 & -0.07 & 0.05\\
+School Average Achievement (Sd Units) & 0.04 & -0.02 & 0.09\\
+Cohort (2015) & -0.20 & -0.24 & -0.16\\
+Random Intercept: School & 0.01 &  & \\
+Residual Variance & 0.93 &  & \\
+School ICC & 0.01 &  & \\
+\bottomrule
+\end{tabular}
 
+\end{threeparttable}
+\end{center}
 
-c <- bind_cols(c %>% as_tibble(rownames = "Parameter"), ci %>% as_tibble())
-
-
-r <- model1$var.comp %>% as_tibble(rownames = "Parameter")
-
-
-bind_rows(c,r) %>% 
-  select(Term = Parameter, Beta = Estimate, `-95% CI` = `2.5 %`, `+95% CI` = `97.5 %`) %>%
-  fuzzyjoin::stringdist_left_join(.,name_cleaner, by = c(Term = "r_word")) %>%
-  relocate(Parameter, .before = "Term") %>%
-  select(-Term,-r_word) %>%
-  printnum(na_string = "") %>%
-  apa_table(caption = "(ref:belong-result)", booktabs = TRUE)
-```
+\end{table}
 
 We first tested whether our demographic and academic achievement variables predicted feelings of school belonging. The results can be found in Table \@ref(tab:tab-belong). Girls, urban youth, Immigrants, and high SES youth had higher levels of belonging. Academic achievement was also a significant predictor but the effect size was not practically significant. Indeed, the demographic and achievement predictors all had relatively weak effect sizes.
 
-We also tested whether these individual-level estimates differed by cohort. Comparing this multi-group model to a model that just controlled for cohort indicated that the latter was a significantly better fitting model (`r glue::glue("F ({belong_aov$df1}, {belong_aov$df2}) = {belong_aov$F.value}, p = {belong_aov$p}")`)[^2]. There were two significant differences by cohort for the influence of gender on belonging and for the influence of achievement on belonging. Exploring the marginal means for these significant interactions showed trivial differences (see Figure \@ref(fig:fig-belong)).
+We also tested whether these individual-level estimates differed by cohort. Comparing this multi-group model to a model that just controlled for cohort indicated that the latter was a significantly better fitting model (F (6, 69039.669) = 2.584, p = 0.017)[^2]. There were two significant differences by cohort for the influence of gender on belonging and for the influence of achievement on belonging. Exploring the marginal means for these significant interactions showed trivial differences (see Figure \@ref(fig:fig-belong)).
 
 [^2]: Note the F-test here is a multiple imputation version of a chi-square log-likelihood ratio test.
 
 (ref:belong-interaction) Cohort Differences in Predicting School Belonging.
 
-```{r fig-belong, fig.cap="(ref:belong-interaction)", fig.width=4, fig.height=5}
-library(patchwork)
-library(ggtext)
-sex_int_belong <- map(belong_model$M2, .f = ~ggeffects::ggpredict(., c("cohort","sex")))
-pc_int_belong <- map(belong_model$M2, .f = ~ggeffects::ggpredict(., c("cohort","pc [-2,-1,0,1,2]")))
-
-
-int_belong_sex = plot(ggeffects::pool_predictions(sex_int_belong)) +
-  tidyMB::theme_mb() +
-  scale_x_continuous(breaks = c(1,2),labels = c("Cohort 2003","Cohort 2015")) +
-  labs(
-    title = "Gender",
-    y = 'School Belonging',
-    x = "",
-    caption = "Marginal effects for <i style='color:red'>Boys</i> and <i style='color:blue'>Girls</i>"
-  ) +
-  theme(plot.caption = element_markdown())
-
-
-int_belong_pc = plot(ggeffects::pool_predictions(pc_int_belong)) +
-  tidyMB::theme_mb() +
-    scale_x_continuous(breaks = c(1,2),labels = c("Cohort 2003","Cohort 2015"))+
-  labs(
-    title = "Achievement",
-    y = 'School Belonging',
-    x = "",
-    caption =  "Marginal effects for achievement\nfrom <i style='color:red'>-2</i> to <i style='color:orange'>+2</i> Standard Deviations"
-  ) +
-  theme(plot.caption = element_markdown())
-
-
-int_belong_sex + int_belong_pc + plot_layout(ncol = 1)
-```
+![(\#fig:fig-belong)(ref:belong-interaction)](manuscript_files/figure-latex/fig-belong-1.pdf) 
 
 ## Predicting NEET Status
 
 (ref:neet-result) Model Predicting NEET Status.
 
-```{r tab-neet, results='asis'}
-targets::tar_load(neet_model)
-targets::tar_load(combined_data)
 
+\begin{table}[tbp]
 
-targets::tar_load(neet_interaction)
-targets::tar_load(neet_cohort)
-neet_comparison = mitml::anova.mitml.result(neet_interaction$fit, neet_model$fit) %>%
-  `[`("test")%>% 
-  `[`("test") %>% unlist
+\begin{center}
+\begin{threeparttable}
 
+\caption{\label{tab:tab-neet}(ref:neet-result)}
 
-neet_comparison2 = mitml::anova.mitml.result(neet_cohort$fit, neet_model$fit)  %>%
-  `[`("test")%>% 
-  `[`("test") %>% unlist
+\begin{tabular}{llll}
+\toprule
+Parameter & \multicolumn{1}{c}{Odds Ratio} & \multicolumn{1}{c}{-95\% CI} & \multicolumn{1}{c}{+95\% CI}\\
+\midrule
+Intercept & 0.02 & 0.02 & 0.03\\
+School Belonging (SD Units) & 0.81 & 0.77 & 0.86\\
+Time Wave (1-Year Units) & 1.22 & 1.17 & 1.28\\
+Achievement (SD Units) & 0.72 & 0.68 & 0.77\\
+Urban & 0.72 & 0.68 & 0.77\\
+SES (SD Units) & 0.86 & 0.80 & 0.92\\
+Gender & 1.20 & 1.09 & 1.31\\
+Urban & 1.02 & 0.91 & 1.14\\
+Indigenous & 1.78 & 1.52 & 2.07\\
+Immigrant & 1.11 & 0.98 & 1.26\\
+School Average SES (SD Units) & 0.69 & 0.58 & 0.82\\
+School Average Achievement (Sd Units) & 1.20 & 1.03 & 1.40\\
+Cohort (2015) & 1.35 & 1.21 & 1.52\\
+Random Intercept: Individual & 1.18 &  & \\
+Random Intercept: School & 0.15 &  & \\
+\bottomrule
+\addlinespace
+\end{tabular}
 
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} Random intercepts are not in odds-ratio units.}
+\end{tablenotes}
 
-r = cor.test(combined_data$sch_escs, combined_data$sch_pc1)
+\end{threeparttable}
+\end{center}
 
+\end{table}
 
-r_prod = glue::glue("r = {round(r$estimate,3)} [{round(r$conf.int[1],3)},{round(r$conf.int[2],3)}]")
-
-
-model1 <- neet_model$summary
-c <- model1$estimate
-ci <- confint(model1)
-
-
-c <- bind_cols(c %>% as_tibble(rownames = "Parameter"), ci %>% as_tibble()) %>%
-  mutate(Estimate=exp(Estimate),
-         `2.5 %`=exp(`2.5 %`),
-         `97.5 %`=exp(`97.5 %`)
-  )
-
-
-r <- model1$var.comp %>% as_tibble(rownames = "Parameter")
-
-
-
-
-bind_rows(c,r) %>% 
-  select(Term = Parameter, `Odds Ratio` = Estimate, `-95% CI` = `2.5 %`,
-         `+95% CI` = `97.5 %`) %>%
-  fuzzyjoin::stringdist_left_join(.,name_cleaner, by = c(Term = "r_word")) %>%
-  relocate(Parameter, .before = "Term") %>%
-  select(-Term,-r_word) %>%
-  printnum(na_string = "") %>%
-  apa_table(caption = "(ref:neet-result)",
-            note = "Random intercepts are not in odds-ratio units.",
-            booktabs = TRUE)
-
-
-```
-
-We next explored whether school belonging predicted NEET status controlling for a range of demographics, school context, and academic achievement predictors. Results can be found in Table \@ref(tab:tab-neet) with conditional means for belonging and other notable predictors in Figure \@ref(fig:fig-neet). It is first worth noting that the participants in the 2015 LSAY cohort were 1.5 times more likely to be NEET at some stage from ages 16-20. This is consistent with the lower youth unemployment rates from 2004-2007 than in 2016-2019 (ABS Cat. No. 6291.0.55.001; see Appendix G). High-levels of achievement and SES, and being female were all associated with a lower likelihood of being NEET, while Indigenous participants were almost two times more likely to be NEET than non-Indigenous participants. School context had large but unexpected effects. High-school average SES was a protective factor against NEET while high-school average achievement (controlling for individual achievement) appears to increase the chances of being NEET. This was almost entirely due to the multicollinearity between these two predictors: `r r_prod`. This multicollinearity would be troubling if school context was a major focus. However, as proxies for school context, the inclusion of both school average SES and achievement allows for more precise estimates of the influence of school belonging on NEET status [@bollinger2015]. In the Appendix D and E we show that estimates for both school SES and achievement predicted lower likelihood of being NEET; though only school average SES was significant.
+We next explored whether school belonging predicted NEET status controlling for a range of demographics, school context, and academic achievement predictors. Results can be found in Table \@ref(tab:tab-neet) with conditional means for belonging and other notable predictors in Figure \@ref(fig:fig-neet). It is first worth noting that the participants in the 2015 LSAY cohort were 1.5 times more likely to be NEET at some stage from ages 16-20. This is consistent with the lower youth unemployment rates from 2004-2007 than in 2016-2019 (ABS Cat. No. 6291.0.55.001; see Appendix G). High-levels of achievement and SES, and being female were all associated with a lower likelihood of being NEET, while Indigenous participants were almost two times more likely to be NEET than non-Indigenous participants. School context had large but unexpected effects. High-school average SES was a protective factor against NEET while high-school average achievement (controlling for individual achievement) appears to increase the chances of being NEET. This was almost entirely due to the multicollinearity between these two predictors: r = 0.72 [0.712,0.728]. This multicollinearity would be troubling if school context was a major focus. However, as proxies for school context, the inclusion of both school average SES and achievement allows for more precise estimates of the influence of school belonging on NEET status [@bollinger2015]. In the Appendix D and E we show that estimates for both school SES and achievement predicted lower likelihood of being NEET; though only school average SES was significant.
 
 Notwithstanding a number of strong predictors of NEET status, our results show that school belonging at age 15 had a significant and strong protective influence. Participants who felt like they belonged at school at age 15 were less likely to be NEET from ages 16 to 20.
 
 ## Moderation of NEET Belonging Association
 
-We explored whether the effect of belonging on NEET varied as a factor of achievement, gender, SES, place, Indigenous and immigrant status. There was no evidence that the results differed as a function of these variable (`r glue::glue("F ({round(neet_comparison$test.test2,2)}, {round(neet_comparison$test.test3,2)}) = {round(neet_comparison$test.test1,2)}, p = {round(neet_comparison$test.test4,3)}")`). In addition, there was no evidence that the association between belonging and NEET varied as a function of cohort.
+We explored whether the effect of belonging on NEET varied as a factor of achievement, gender, SES, place, Indigenous and immigrant status. There was no evidence that the results differed as a function of these variable (F (6, 5.67) = 0.22, p = 0.957). In addition, there was no evidence that the association between belonging and NEET varied as a function of cohort.
 
 ## High-school Graduation as Mechanism
 
@@ -363,138 +297,58 @@ Finally, we wanted to know whether school belonging had a unique effect on NEET 
 
 (ref:neet-grad) Model Predicting NEET Status (Controlling for High-School Graduation).
 
-```{r tab-grad, results='asis'}
-targets::tar_load(neet_sch_grad)
 
+\begin{table}[tbp]
 
+\begin{center}
+\begin{threeparttable}
 
+\caption{\label{tab:tab-grad}(ref:neet-grad)}
 
-model1 <- neet_sch_grad$summary
-c <- model1$estimate
-ci <- confint(model1)
+\begin{tabular}{llll}
+\toprule
+Parameter & \multicolumn{1}{c}{Odds Ratio} & \multicolumn{1}{c}{-95\% CI} & \multicolumn{1}{c}{+95\% CI}\\
+\midrule
+Intercept & 0.03 & 0.02 & 0.03\\
+High-School Graduate & 6.91 & 5.92 & 8.07\\
+Time Wave (1-Year Units) & 0.74 & 0.69 & 0.80\\
+Achievement (SD Units) & 0.64 & 0.60 & 0.69\\
+Urban & 0.64 & 0.60 & 0.69\\
+SES (SD Units) & 0.84 & 0.78 & 0.91\\
+Gender & 1.18 & 1.06 & 1.30\\
+Urban & 0.93 & 0.82 & 1.06\\
+Indigenous & 1.76 & 1.47 & 2.09\\
+Immigrant & 1.04 & 0.90 & 1.19\\
+School Belonging (SD Units) & 0.80 & 0.75 & 0.84\\
+Cohort (2015) & 1.16 & 1.02 & 1.32\\
+School Average SES (SD Units) & 0.72 & 0.59 & 0.88\\
+School Average Achievement (Sd Units) & 1.18 & 1.00 & 1.40\\
+Random Intercept: Individual & 1.95 &  & \\
+Random Intercept: School & 0.21 &  & \\
+\bottomrule
+\addlinespace
+\end{tabular}
 
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} Random intercepts are not in odds-ratio units.}
+\end{tablenotes}
 
-c <- bind_cols(c %>% as_tibble(rownames = "Parameter"), ci %>% as_tibble()) %>%
-  mutate(Estimate=exp(Estimate),
-         `2.5 %`=exp(`2.5 %`),
-         `97.5 %`=exp(`97.5 %`)
-  )
+\end{threeparttable}
+\end{center}
 
-
-r <- model1$var.comp %>% as_tibble(rownames = "Parameter")
-
-
-
-
-bind_rows(c,r) %>% 
-  select(Term = Parameter, `Odds Ratio` = Estimate, `-95% CI` = `2.5 %`,
-         `+95% CI` = `97.5 %`) %>%
-  fuzzyjoin::stringdist_left_join(.,name_cleaner, by = c(Term = "r_word")) %>%
-  relocate(Parameter, .before = "Term") %>%
-  select(-Term,-r_word) %>%
-  printnum(na_string = "") %>%
-  apa_table(caption = "(ref:neet-grad)",
-            note = "Random intercepts are not in odds-ratio units.",
-            booktabs = TRUE)
-
-
-```
+\end{table}
 
 (ref:neet-cap) Marginal Effects for Predicting NEET Status.
 
-```{r fig-neet, fig.cap="(ref:neet-cap)", fig.env = "sidewaysfigure", fig.width=10, fig.height=7}
-prediction_belong <- map(neet_model$fit, 
-                         ~ggeffects::ggpredict(., terms = "belong"))
-
-
-plot_belong = plot(ggeffects::pool_predictions(prediction_belong)) +
-  tidyMB::theme_mb() +
-  labs(title = "School Belonging") +
-  xlim(-3,3) + 
-  scale_y_continuous(labels = scales::percent, limits = c(0,.1))
-
-
-prediction_ach <- map(neet_model$fit, 
-                         ~ggeffects::ggpredict(., terms = "pc"))
-
-
-plot_ach = plot(ggeffects::pool_predictions(prediction_ach)) +
-  tidyMB::theme_mb() +
-  labs(title = "School Achievement") +
-  scale_y_continuous(labels = scales::percent, limits = c(0,.1)) +
-  xlim(-3,3) 
-  
-
-
-prediction_sex <- map(neet_model$fit, 
-                         ~ggeffects::ggpredict(., terms = "sex"))
-
-
-plot_sex = plot(ggeffects::pool_predictions(prediction_sex)) +
-    scale_x_continuous(breaks = c(1,2),labels = c("Boys","Girls")) +
-  tidyMB::theme_mb() +
-  labs(title = "Gender") +
-  scale_y_continuous(labels = scales::percent, limits = c(0,.1))
-
-
-prediction_indig <- map(neet_model$fit, 
-                         ~ggeffects::ggpredict(., terms = "indig"))
-
-
-plot_indig = plot(ggeffects::pool_predictions(prediction_indig)) +
-    scale_x_continuous(breaks = c(0,1),labels = c("non-Indigenous","Indigenous"))+
-  tidyMB::theme_mb() +
-  labs(title = "Indigenous") +
-  scale_y_continuous(labels = scales::percent, limits = c(0,.1))
-
-
-
-
-plot_belong+plot_ach+plot_sex+plot_indig+
-  plot_annotation(
-     title = 'Predicted Probability of being NEET',
-     subtitle = 'Plotting largest individual level effects',
-     caption = 'Plotted from three level logistic regression model') &
-  tidyMB::theme_mb()
-```
+\begin{sidewaysfigure}
+\includegraphics{manuscript_files/figure-latex/fig-neet-1} \caption{(ref:neet-cap)}(\#fig:fig-neet)
+\end{sidewaysfigure}
 
 (ref:belong-comparison) Marginal Effects for Predicting NEET Status.
 
-```{r fig-compare,fig.cap="(ref:belong-comparison)", fig.env = "sidewaysfigure", fig.width=10, fig.height=7}
-
-
-prediction_belong <- map(neet_model$fit, 
-                         ~ggeffects::ggpredict(., terms = "belong"))
-
-
-plot_belong_m1 = plot(ggeffects::pool_predictions(prediction_belong)) +
-  tidyMB::theme_mb() +
-  labs(title = "Not Controlling for Graduation") +
-  xlim(-3,3) + 
-  scale_y_continuous(labels = scales::percent, limits = c(0,.1))
-
-
-
-
-prediction_belong <- map(neet_sch_grad$fit, 
-                         ~ggeffects::ggpredict(., terms = c("belong", "sch_grad")))
-
-plot_belong_m2 = plot(ggeffects::pool_predictions(prediction_belong)) +
-  tidyMB::theme_mb() +
-  labs(title = "Controlling for Graduation",
-       color = "High-school graduation",
-       caption = "Blue = High-school graduate; Red = Did not complete high-school."
-       ) +
-  xlim(-3,3) + 
-  scale_y_continuous(labels = scales::percent, limits = c(0,.2))
-
-plot_belong_m1+plot_belong_m2+
-  plot_annotation(
-     title = 'Predicted Probability of being NEET',
-     subtitle = 'Controlling or Not Controlling for High-school Graduation',
-     caption = 'Plotted from three level logistic regression models') &
-  tidyMB::theme_mb()
-```
+\begin{sidewaysfigure}
+\includegraphics{manuscript_files/figure-latex/fig-compare-1} \caption{(ref:belong-comparison)}(\#fig:fig-compare)
+\end{sidewaysfigure}
 
 # Discussion
 

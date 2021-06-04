@@ -1,3 +1,7 @@
+# Read Me ####
+# This project is managed via the Targets infrastructure. This is hard to blind.
+# For this reason we only include the analysis file for review. 
+
 # library calls ####
 library(purrr)
 library(curl)
@@ -52,10 +56,10 @@ egp <- scct::conversion_table %>%
   mutate(across(everything(), ~as.numeric(.))) %>%
   as_tibble() %>%
   distinct() %>%
+  filter(!is.na(HISEI)) %>%
   group_by(HISEI) %>%
-  mutate(egp = .min(egp)) %>%
-  ungroup() %>%
-  filter(!is.na(HISEI))
+  summarise(egp = .min(egp)) %>%
+  ungroup()
 # Get cloud files
 cloud_list <- function(username, password, relPath = "/", dav = "https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/") {
   uri <- URLencode(paste(dav, relPath, sep=""))
@@ -102,6 +106,7 @@ get_lsay2003_data <- function(){
                        password = cloudstor_password,
                        dest = 'lsay2003.sav',
                        cloud_address = 'https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/Databases/LSAY-v10/LSAY2003/lsay2003.sav') %>%
+    filter(!is.na(ACH04WTP)) %>%
     select(belong = BELONG,
            sex = SEX,
            indig = INDIG,
@@ -196,6 +201,7 @@ get_lsay2003_data <- function(){
              TRUE ~ 0
            )
     ) %>%
+    #drop_na(neet1) %>%
     mutate(across(starts_with("ST27Q0"), ~replace(.,.>4, NA_real_))) %>%
     group_by(schid) %>%
     mutate(across(pc1:pc5, .mean,.names = "sch_{.col}")) %>%
@@ -223,6 +229,7 @@ get_lsay2015_data <- function(){
                        password = cloudstor_password,
                        dest = 'lsay2003.sav',
                        cloud_address = 'https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/lsay/lsay2015_v4.sav') %>%
+    filter(!is.na(ACH16WTP)) %>%
     select(belong = BELONG,
            sex = ST004D01T,
            indig = INDIG,
@@ -320,6 +327,7 @@ get_lsay2015_data <- function(){
            ),
            indig = replace(indig, indig > 2, NA)-1
     ) %>%
+    #drop_na(neet1) %>%
     mutate(across(starts_with("ST034Q0"), ~replace(.,.>4, NA_real_))) %>%
     group_by(schid) %>%
     mutate(across(pc1:pc5, .mean,.names = "sch_{.col}")) %>%

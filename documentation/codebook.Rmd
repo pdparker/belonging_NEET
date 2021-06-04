@@ -18,7 +18,7 @@ The dataset examined has the following dimensions:
 ---------------------------------
 Feature                    Result
 ------------------------ --------
-Number of observations      49232
+Number of observations      14082
 
 Number of variables            27
 ---------------------------------
@@ -34,57 +34,57 @@ Label   Variable           Class       # unique  Missing  Description
 ------- ------------------ --------- ---------- --------- -------------
         **[cohort]**       factor             2  0.00 %                
 
-        **[belong]**       numeric         1564  3.24 %                
+        **[belong]**       numeric          850  0.40 %                
 
         **[sex]**          factor             2  0.00 %                
 
-        **[indig]**        factor             3  0.02 %                
+        **[indig]**        factor             2  0.00 %                
 
-        **[loc]**          factor             3  1.11 %                
+        **[loc]**          factor             2  0.00 %                
 
-        **[immig]**        factor             3  2.99 %                
+        **[immig]**        factor             3  1.62 %                
 
-        **[egp]**          factor             4  12.04 %               
+        **[egp]**          factor             4  16.38 %               
 
-        **[escs]**         numeric        16401  2.34 %                
+        **[escs]**         numeric         6937  0.54 %                
 
-        **[sch\_grad1]**   numeric            3  42.73 %               
+        **[sch\_grad1]**   numeric            3  0.23 %                
 
-        **[sch\_grad2]**   numeric            3  46.93 %               
+        **[sch\_grad2]**   numeric            3  10.45 %               
 
-        **[sch\_grad3]**   numeric            3  50.85 %               
+        **[sch\_grad3]**   numeric            3  20.98 %               
 
-        **[sch\_grad4]**   numeric            3  59.58 %               
+        **[sch\_grad4]**   numeric            3  33.14 %               
 
-        **[pc1]**          numeric        24901  1.11 %                
+        **[pc1]**          numeric        14082  0.00 %                
 
-        **[pc2]**          numeric        24901  1.11 %                
+        **[pc2]**          numeric        14082  0.00 %                
 
-        **[pc3]**          numeric        24901  1.11 %                
+        **[pc3]**          numeric        14082  0.00 %                
 
-        **[pc4]**          numeric        24900  1.11 %                
+        **[pc4]**          numeric        14081  0.00 %                
 
-        **[pc5]**          numeric        24901  1.11 %                
+        **[pc5]**          numeric        14082  0.00 %                
 
-        **[neet1]**        factor             3  43.93 %               
+        **[neet1]**        factor             3  2.54 %                
 
-        **[neet2]**        factor             3  46.93 %               
+        **[neet2]**        factor             3  10.45 %               
 
-        **[neet3]**        factor             3  50.85 %               
+        **[neet3]**        factor             3  20.98 %               
 
-        **[neet4]**        factor             3  59.58 %               
+        **[neet4]**        factor             3  33.14 %               
 
-        **[sch\_pc1]**     numeric         1073  1.11 %                
+        **[sch\_pc1]**     numeric         1044  0.00 %                
 
-        **[sch\_pc2]**     numeric         1073  1.11 %                
+        **[sch\_pc2]**     numeric         1044  0.00 %                
 
-        **[sch\_pc3]**     numeric         1073  1.11 %                
+        **[sch\_pc3]**     numeric         1044  0.00 %                
 
-        **[sch\_pc4]**     numeric         1073  1.11 %                
+        **[sch\_pc4]**     numeric         1044  0.00 %                
 
-        **[sch\_pc5]**     numeric         1073  1.11 %                
+        **[sch\_pc5]**     numeric         1044  0.00 %                
 
-        **[sch\_escs]**    numeric         1069  1.24 %                
+        **[sch\_escs]**    numeric         1044  0.01 %                
 -----------------------------------------------------------------------
 
 
@@ -104,7 +104,7 @@ Number of missing obs.            0 (0 %)
 
 Number of unique values                 2
 
-Mode                        "cohort_2015"
+Mode                        "cohort_2003"
 
 Reference category            cohort_2003
 -----------------------------------------
@@ -114,7 +114,7 @@ Reference category            cohort_2003
 \bminitwo
 ```{r 'Var-1-cohort', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
 ggAggBarplot(data = structure(list(x = structure(1:2, .Label = c("cohort_2003", 
-"cohort_2015"), class = "factor"), y = c(21963L, 27269L)), class = "data.frame", row.names = c(NA, 
+"cohort_2015"), class = "factor"), y = c(9378L, 4704L)), class = "data.frame", row.names = c(NA, 
 -2L)), vnam = "cohort")
 ```
 
@@ -131,21 +131,21 @@ ggAggBarplot(data = structure(list(x = structure(1:2, .Label = c("cohort_2003",
 
 \bminione
 
------------------------------------------
-Feature                            Result
-------------------------- ---------------
-Variable type                     numeric
+---------------------------------------
+Feature                          Result
+------------------------- -------------
+Variable type                   numeric
 
-Number of missing obs.      1593 (3.24 %)
+Number of missing obs.       57 (0.4 %)
 
-Number of unique values              1563
+Number of unique values             849
 
-Median                              -0.29
+Median                            -0.29
 
-1st and 3rd quartiles         -0.64; 0.49
+1st and 3rd quartiles       -0.64; 0.49
 
-Min. and max.                 -3.38; 2.61
------------------------------------------
+Min. and max.               -3.38; 2.61
+---------------------------------------
 
 
 \emini
@@ -154,9 +154,9 @@ Min. and max.                 -3.38; 2.61
 ggAggHist(data = structure(list(xmin = c(-3.5, -3, -2.5, -2, 
 -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5), xmax = c(-3, -2.5, -2, 
 -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3), ymin = c(0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0), ymax = c(245L, 17L, 345L, 941L, 
-4079L, 12026L, 10440L, 9864L, 4301L, 1999L, 780L, 1681L, 921L
-)), class = "data.frame", row.names = c(NA, -13L)), vnam = "belong")
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0), ymax = c(43L, 5L, 105L, 263L, 
+1099L, 3739L, 2498L, 3276L, 1181L, 739L, 174L, 724L, 179L)), class = "data.frame", row.names = c(NA, 
+-13L)), vnam = "belong")
 ```
 
 \emini
@@ -179,7 +179,7 @@ Number of missing obs.      0 (0 %)
 
 Number of unique values           2
 
-Mode                            "2"
+Mode                            "1"
 
 Reference category                1
 -----------------------------------
@@ -189,7 +189,7 @@ Reference category                1
 \bminitwo
 ```{r 'Var-3-sex', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
 ggAggBarplot(data = structure(list(x = structure(1:2, .Label = c("1", 
-"2"), class = "factor"), y = c(24394L, 24838L)), class = "data.frame", row.names = c(NA, 
+"2"), class = "factor"), y = c(7249L, 6833L)), class = "data.frame", row.names = c(NA, 
 -2L)), vnam = "sex")
 ```
 
@@ -206,26 +206,26 @@ ggAggBarplot(data = structure(list(x = structure(1:2, .Label = c("1",
 
 \bminione
 
----------------------------------------
-Feature                          Result
-------------------------- -------------
-Variable type                    factor
+-----------------------------------
+Feature                      Result
+------------------------- ---------
+Variable type                factor
 
-Number of missing obs.      10 (0.02 %)
+Number of missing obs.      0 (0 %)
 
-Number of unique values               2
+Number of unique values           2
 
-Mode                                "0"
+Mode                            "0"
 
-Reference category                    0
----------------------------------------
+Reference category                0
+-----------------------------------
 
 
 \emini
 \bminitwo
 ```{r 'Var-4-indig', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
 ggAggBarplot(data = structure(list(x = structure(1:2, .Label = c("0", 
-"1"), class = "factor"), y = c(42522L, 6700L)), class = "data.frame", row.names = c(NA, 
+"1"), class = "factor"), y = c(12988L, 1094L)), class = "data.frame", row.names = c(NA, 
 -2L)), vnam = "indig")
 ```
 
@@ -242,26 +242,26 @@ ggAggBarplot(data = structure(list(x = structure(1:2, .Label = c("0",
 
 \bminione
 
-----------------------------------------
-Feature                           Result
-------------------------- --------------
-Variable type                     factor
+-----------------------------------
+Feature                      Result
+------------------------- ---------
+Variable type                factor
 
-Number of missing obs.      548 (1.11 %)
+Number of missing obs.      0 (0 %)
 
-Number of unique values                2
+Number of unique values           2
 
-Mode                                 "1"
+Mode                            "1"
 
-Reference category                     0
-----------------------------------------
+Reference category                0
+-----------------------------------
 
 
 \emini
 \bminitwo
 ```{r 'Var-5-loc', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
 ggAggBarplot(data = structure(list(x = structure(1:2, .Label = c("0", 
-"1"), class = "factor"), y = c(19755L, 28929L)), class = "data.frame", row.names = c(NA, 
+"1"), class = "factor"), y = c(5698L, 8384L)), class = "data.frame", row.names = c(NA, 
 -2L)), vnam = "loc")
 ```
 
@@ -278,26 +278,26 @@ ggAggBarplot(data = structure(list(x = structure(1:2, .Label = c("0",
 
 \bminione
 
------------------------------------------
-Feature                            Result
-------------------------- ---------------
-Variable type                      factor
+----------------------------------------
+Feature                           Result
+------------------------- --------------
+Variable type                     factor
 
-Number of missing obs.      1473 (2.99 %)
+Number of missing obs.      228 (1.62 %)
 
-Number of unique values                 2
+Number of unique values                2
 
-Mode                                  "0"
+Mode                                 "0"
 
-Reference category                      0
------------------------------------------
+Reference category                     0
+----------------------------------------
 
 
 \emini
 \bminitwo
 ```{r 'Var-6-immig', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
 ggAggBarplot(data = structure(list(x = structure(1:2, .Label = c("0", 
-"1"), class = "factor"), y = c(38110L, 9649L)), class = "data.frame", row.names = c(NA, 
+"1"), class = "factor"), y = c(10916L, 2938L)), class = "data.frame", row.names = c(NA, 
 -2L)), vnam = "immig")
 ```
 
@@ -319,7 +319,7 @@ Feature                             Result
 ------------------------- ----------------
 Variable type                       factor
 
-Number of missing obs.      5928 (12.04 %)
+Number of missing obs.      2306 (16.38 %)
 
 Number of unique values                  3
 
@@ -333,8 +333,8 @@ Reference category            intermediate
 \bminitwo
 ```{r 'Var-7-egp', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
 ggAggBarplot(data = structure(list(x = structure(1:3, .Label = c("intermediate", 
-"salariat", "working"), class = "factor"), y = c(11097L, 30416L, 
-1791L)), class = "data.frame", row.names = c(NA, -3L)), vnam = "egp")
+"salariat", "working"), class = "factor"), y = c(1721L, 9638L, 
+417L)), class = "data.frame", row.names = c(NA, -3L)), vnam = "egp")
 ```
 
 \emini
@@ -350,21 +350,21 @@ ggAggBarplot(data = structure(list(x = structure(1:3, .Label = c("intermediate",
 
 \bminione
 
------------------------------------------
-Feature                            Result
-------------------------- ---------------
-Variable type                     numeric
+---------------------------------------
+Feature                          Result
+------------------------- -------------
+Variable type                   numeric
 
-Number of missing obs.      1153 (2.34 %)
+Number of missing obs.      76 (0.54 %)
 
-Number of unique values             16400
+Number of unique values            6936
 
-Median                              -0.06
+Median                             0.36
 
-1st and 3rd quartiles         -0.56; 0.51
+1st and 3rd quartiles       -0.24; 0.91
 
-Min. and max.                  -4.5; 3.18
------------------------------------------
+Min. and max.               -4.06; 3.18
+---------------------------------------
 
 
 \emini
@@ -374,8 +374,8 @@ ggAggHist(data = structure(list(xmin = c(-4.5, -4, -3.5, -3,
 -2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3), xmax = c(-4, 
 -3.5, -3, -2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 
 3.5), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-), ymax = c(5L, 3L, 24L, 68L, 249L, 805L, 3141L, 8937L, 12332L, 
-10431L, 7403L, 3615L, 935L, 120L, 7L, 4L)), class = "data.frame", row.names = c(NA, 
+), ymax = c(1L, 0L, 8L, 13L, 61L, 156L, 583L, 1527L, 2479L, 3080L, 
+3208L, 2068L, 716L, 101L, 4L, 1L)), class = "data.frame", row.names = c(NA, 
 -16L)), vnam = "escs")
 ```
 
@@ -390,21 +390,21 @@ ggAggHist(data = structure(list(xmin = c(-4.5, -4, -3.5, -3,
 
 \bminione
 
--------------------------------------------
-Feature                              Result
-------------------------- -----------------
-Variable type                       numeric
+---------------------------------------
+Feature                          Result
+------------------------- -------------
+Variable type                   numeric
 
-Number of missing obs.      21037 (42.73 %)
+Number of missing obs.      32 (0.23 %)
 
-Number of unique values                   2
+Number of unique values               2
 
-Median                                    0
+Median                                0
 
-1st and 3rd quartiles                  0; 0
+1st and 3rd quartiles              0; 0
 
-Min. and max.                          0; 1
--------------------------------------------
+Min. and max.                      0; 1
+---------------------------------------
 
 
 \emini
@@ -415,8 +415,8 @@ ggAggHist(data = structure(list(xmin = c(0, 0.05, 0.1, 0.15,
 0.8, 0.85, 0.9, 0.95), xmax = c(0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 
 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 
 0.9, 0.95, 1), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0), ymax = c(26932L, 0L, 0L, 0L, 0L, 0L, 0L, 
-0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 1263L)), class = "data.frame", row.names = c(NA, 
+0, 0, 0, 0, 0, 0, 0), ymax = c(13444L, 0L, 0L, 0L, 0L, 0L, 0L, 
+0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 606L)), class = "data.frame", row.names = c(NA, 
 -20L)), vnam = "sch_grad1")
 ```
 
@@ -431,21 +431,21 @@ ggAggHist(data = structure(list(xmin = c(0, 0.05, 0.1, 0.15,
 
 \bminione
 
--------------------------------------------
-Feature                              Result
-------------------------- -----------------
-Variable type                       numeric
+------------------------------------------
+Feature                             Result
+------------------------- ----------------
+Variable type                      numeric
 
-Number of missing obs.      23104 (46.93 %)
+Number of missing obs.      1472 (10.45 %)
 
-Number of unique values                   2
+Number of unique values                  2
 
-Median                                    0
+Median                                   0
 
-1st and 3rd quartiles                  0; 1
+1st and 3rd quartiles                 0; 1
 
-Min. and max.                          0; 1
--------------------------------------------
+Min. and max.                         0; 1
+------------------------------------------
 
 
 \emini
@@ -456,8 +456,8 @@ ggAggHist(data = structure(list(xmin = c(0, 0.05, 0.1, 0.15,
 0.8, 0.85, 0.9, 0.95), xmax = c(0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 
 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 
 0.9, 0.95, 1), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0), ymax = c(19375L, 0L, 0L, 0L, 0L, 0L, 0L, 
-0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 6753L)), class = "data.frame", row.names = c(NA, 
+0, 0, 0, 0, 0, 0, 0), ymax = c(9432L, 0L, 0L, 0L, 0L, 0L, 0L, 
+0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 3178L)), class = "data.frame", row.names = c(NA, 
 -20L)), vnam = "sch_grad2")
 ```
 
@@ -472,21 +472,21 @@ ggAggHist(data = structure(list(xmin = c(0, 0.05, 0.1, 0.15,
 
 \bminione
 
--------------------------------------------
-Feature                              Result
-------------------------- -----------------
-Variable type                       numeric
+------------------------------------------
+Feature                             Result
+------------------------- ----------------
+Variable type                      numeric
 
-Number of missing obs.      25036 (50.85 %)
+Number of missing obs.      2955 (20.98 %)
 
-Number of unique values                   2
+Number of unique values                  2
 
-Median                                    1
+Median                                   1
 
-1st and 3rd quartiles                  1; 1
+1st and 3rd quartiles                 1; 1
 
-Min. and max.                          0; 1
--------------------------------------------
+Min. and max.                         0; 1
+------------------------------------------
 
 
 \emini
@@ -497,8 +497,8 @@ ggAggHist(data = structure(list(xmin = c(0, 0.05, 0.1, 0.15,
 0.8, 0.85, 0.9, 0.95), xmax = c(0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 
 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 
 0.9, 0.95, 1), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0), ymax = c(4213L, 0L, 0L, 0L, 0L, 0L, 0L, 
-0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 19983L)), class = "data.frame", row.names = c(NA, 
+0, 0, 0, 0, 0, 0, 0), ymax = c(1815L, 0L, 0L, 0L, 0L, 0L, 0L, 
+0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 9312L)), class = "data.frame", row.names = c(NA, 
 -20L)), vnam = "sch_grad3")
 ```
 
@@ -513,21 +513,21 @@ ggAggHist(data = structure(list(xmin = c(0, 0.05, 0.1, 0.15,
 
 \bminione
 
--------------------------------------------
-Feature                              Result
-------------------------- -----------------
-Variable type                       numeric
+------------------------------------------
+Feature                             Result
+------------------------- ----------------
+Variable type                      numeric
 
-Number of missing obs.      29333 (59.58 %)
+Number of missing obs.      4667 (33.14 %)
 
-Number of unique values                   2
+Number of unique values                  2
 
-Median                                    1
+Median                                   1
 
-1st and 3rd quartiles                  1; 1
+1st and 3rd quartiles                 1; 1
 
-Min. and max.                          0; 1
--------------------------------------------
+Min. and max.                         0; 1
+------------------------------------------
 
 
 \emini
@@ -538,8 +538,8 @@ ggAggHist(data = structure(list(xmin = c(0, 0.05, 0.1, 0.15,
 0.8, 0.85, 0.9, 0.95), xmax = c(0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 
 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 
 0.9, 0.95, 1), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0), ymax = c(1873L, 0L, 0L, 0L, 0L, 0L, 0L, 
-0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 18026L)), class = "data.frame", row.names = c(NA, 
+0, 0, 0, 0, 0, 0, 0), ymax = c(785L, 0L, 0L, 0L, 0L, 0L, 0L, 
+0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 8630L)), class = "data.frame", row.names = c(NA, 
 -20L)), vnam = "sch_grad4")
 ```
 
@@ -554,21 +554,21 @@ ggAggHist(data = structure(list(xmin = c(0, 0.05, 0.1, 0.15,
 
 \bminione
 
-----------------------------------------
-Feature                           Result
-------------------------- --------------
-Variable type                    numeric
+---------------------------------------
+Feature                          Result
+------------------------- -------------
+Variable type                   numeric
 
-Number of missing obs.      548 (1.11 %)
+Number of missing obs.          0 (0 %)
 
-Number of unique values            24900
+Number of unique values           14082
 
-Median                              0.03
+Median                             0.07
 
-1st and 3rd quartiles         -0.7; 0.71
+1st and 3rd quartiles       -0.66; 0.71
 
-Min. and max.                -4.03; 3.49
-----------------------------------------
+Min. and max.               -4.17; 3.17
+---------------------------------------
 
 
 \emini
@@ -578,8 +578,8 @@ ggAggHist(data = structure(list(xmin = c(-4.5, -4, -3.5, -3,
 -2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3), xmax = c(-4, 
 -3.5, -3, -2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 
 3.5), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-), ymax = c(4L, 8L, 50L, 215L, 865L, 2326L, 4747L, 6934L, 8639L, 
-9092L, 7931L, 4854L, 2220L, 610L, 170L, 19L)), class = "data.frame", row.names = c(NA, 
+), ymax = c(2L, 6L, 21L, 96L, 288L, 663L, 1241L, 1882L, 2495L, 
+2797L, 2366L, 1460L, 567L, 157L, 38L, 3L)), class = "data.frame", row.names = c(NA, 
 -16L)), vnam = "pc1")
 ```
 
@@ -594,33 +594,33 @@ ggAggHist(data = structure(list(xmin = c(-4.5, -4, -3.5, -3,
 
 \bminione
 
-----------------------------------------
-Feature                           Result
-------------------------- --------------
-Variable type                    numeric
+---------------------------------------
+Feature                          Result
+------------------------- -------------
+Variable type                   numeric
 
-Number of missing obs.      548 (1.11 %)
+Number of missing obs.          0 (0 %)
 
-Number of unique values            24900
+Number of unique values           14082
 
-Median                              0.02
+Median                             0.05
 
-1st and 3rd quartiles        -0.69; 0.71
+1st and 3rd quartiles       -0.67; 0.71
 
-Min. and max.                -4.27; 3.58
-----------------------------------------
+Min. and max.                -4.4; 3.27
+---------------------------------------
 
 
 \emini
 \bminitwo
 ```{r 'Var-14-pc2', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
 ggAggHist(data = structure(list(xmin = c(-4.5, -4, -3.5, -3, 
--2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5), xmax = c(-4, 
+-2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3), xmax = c(-4, 
 -3.5, -3, -2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 
-3.5, 4), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0), ymax = c(6L, 14L, 27L, 199L, 904L, 2288L, 4721L, 7028L, 
-8704L, 9211L, 7672L, 4893L, 2156L, 670L, 167L, 23L, 1L)), class = "data.frame", row.names = c(NA, 
--17L)), vnam = "pc2")
+3.5), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+), ymax = c(5L, 4L, 16L, 96L, 308L, 635L, 1233L, 1939L, 2518L, 
+2736L, 2383L, 1400L, 621L, 152L, 32L, 4L)), class = "data.frame", row.names = c(NA, 
+-16L)), vnam = "pc2")
 ```
 
 \emini
@@ -634,33 +634,33 @@ ggAggHist(data = structure(list(xmin = c(-4.5, -4, -3.5, -3,
 
 \bminione
 
-----------------------------------------
-Feature                           Result
-------------------------- --------------
-Variable type                    numeric
+---------------------------------------
+Feature                          Result
+------------------------- -------------
+Variable type                   numeric
 
-Number of missing obs.      548 (1.11 %)
+Number of missing obs.          0 (0 %)
 
-Number of unique values            24900
+Number of unique values           14082
 
-Median                              0.02
+Median                             0.05
 
-1st and 3rd quartiles        -0.69; 0.71
+1st and 3rd quartiles       -0.66; 0.71
 
-Min. and max.                 -3.9; 3.71
-----------------------------------------
+Min. and max.               -4.03; 3.53
+---------------------------------------
 
 
 \emini
 \bminitwo
 ```{r 'Var-15-pc3', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
-ggAggHist(data = structure(list(xmin = c(-4, -3.5, -3, -2.5, 
--2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5), xmax = c(-3.5, 
--3, -2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 
-4), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
-    ymax = c(11L, 38L, 180L, 887L, 2474L, 4510L, 6995L, 8795L, 
-    9124L, 7778L, 4810L, 2210L, 698L, 161L, 11L, 2L)), class = "data.frame", row.names = c(NA, 
--16L)), vnam = "pc3")
+ggAggHist(data = structure(list(xmin = c(-4.5, -4, -3.5, -3, 
+-2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5), xmax = c(-4, 
+-3.5, -3, -2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 
+3.5, 4), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0), ymax = c(1L, 2L, 18L, 92L, 314L, 652L, 1244L, 1872L, 2534L, 
+2783L, 2285L, 1498L, 587L, 163L, 33L, 3L, 1L)), class = "data.frame", row.names = c(NA, 
+-17L)), vnam = "pc3")
 ```
 
 \emini
@@ -674,32 +674,32 @@ ggAggHist(data = structure(list(xmin = c(-4, -3.5, -3, -2.5,
 
 \bminione
 
-----------------------------------------
-Feature                           Result
-------------------------- --------------
-Variable type                    numeric
+---------------------------------------
+Feature                          Result
+------------------------- -------------
+Variable type                   numeric
 
-Number of missing obs.      548 (1.11 %)
+Number of missing obs.          0 (0 %)
 
-Number of unique values            24899
+Number of unique values           14081
 
-Median                              0.03
+Median                             0.05
 
-1st and 3rd quartiles         -0.7; 0.71
+1st and 3rd quartiles        -0.66; 0.7
 
-Min. and max.                -4.48; 3.64
-----------------------------------------
+Min. and max.               -4.61; 3.45
+---------------------------------------
 
 
 \emini
 \bminitwo
 ```{r 'Var-16-pc4', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
-ggAggHist(data = structure(list(xmin = c(-4.5, -4, -3.5, -3, 
--2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5), xmax = c(-4, 
--3.5, -3, -2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 
-3.5, 4), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0), ymax = c(4L, 13L, 37L, 197L, 912L, 2272L, 4747L, 7074L, 
-8589L, 9079L, 7767L, 4976L, 2166L, 663L, 163L, 23L, 2L)), class = "data.frame", row.names = c(NA, 
+ggAggHist(data = structure(list(xmin = c(-5, -4.5, -4, -3.5, 
+-3, -2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3), xmax = c(-4.5, 
+-4, -3.5, -3, -2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 
+3, 3.5), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0), ymax = c(1L, 2L, 7L, 23L, 84L, 290L, 660L, 1251L, 1876L, 
+2579L, 2704L, 2382L, 1427L, 582L, 179L, 33L, 2L)), class = "data.frame", row.names = c(NA, 
 -17L)), vnam = "pc4")
 ```
 
@@ -714,33 +714,33 @@ ggAggHist(data = structure(list(xmin = c(-4.5, -4, -3.5, -3,
 
 \bminione
 
-----------------------------------------
-Feature                           Result
-------------------------- --------------
-Variable type                    numeric
+--------------------------------------
+Feature                         Result
+------------------------- ------------
+Variable type                  numeric
 
-Number of missing obs.      548 (1.11 %)
+Number of missing obs.         0 (0 %)
 
-Number of unique values            24900
+Number of unique values          14082
 
-Median                              0.02
+Median                            0.06
 
-1st and 3rd quartiles        -0.69; 0.71
+1st and 3rd quartiles       -0.66; 0.7
 
-Min. and max.                -4.12; 3.56
-----------------------------------------
+Min. and max.               -4.26; 3.2
+--------------------------------------
 
 
 \emini
 \bminitwo
 ```{r 'Var-17-pc5', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
 ggAggHist(data = structure(list(xmin = c(-4.5, -4, -3.5, -3, 
--2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5), xmax = c(-4, 
+-2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3), xmax = c(-4, 
 -3.5, -3, -2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 
-3.5, 4), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0), ymax = c(3L, 6L, 46L, 207L, 833L, 2438L, 4633L, 7023L, 
-8718L, 9054L, 7653L, 4979L, 2265L, 677L, 128L, 20L, 1L)), class = "data.frame", row.names = c(NA, 
--17L)), vnam = "pc5")
+3.5), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+), ymax = c(2L, 5L, 21L, 95L, 285L, 677L, 1225L, 1929L, 2472L, 
+2779L, 2333L, 1452L, 610L, 167L, 25L, 5L)), class = "data.frame", row.names = c(NA, 
+-16L)), vnam = "pc5")
 ```
 
 \emini
@@ -754,26 +754,26 @@ ggAggHist(data = structure(list(xmin = c(-4.5, -4, -3.5, -3,
 
 \bminione
 
--------------------------------------------
-Feature                              Result
-------------------------- -----------------
-Variable type                        factor
+----------------------------------------
+Feature                           Result
+------------------------- --------------
+Variable type                     factor
 
-Number of missing obs.      21626 (43.93 %)
+Number of missing obs.      357 (2.54 %)
 
-Number of unique values                   2
+Number of unique values                2
 
-Mode                                    "0"
+Mode                                 "0"
 
-Reference category                        0
--------------------------------------------
+Reference category                     0
+----------------------------------------
 
 
 \emini
 \bminitwo
 ```{r 'Var-18-neet1', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
 ggAggBarplot(data = structure(list(x = structure(1:2, .Label = c("0", 
-"1"), class = "factor"), y = c(26597L, 1009L)), class = "data.frame", row.names = c(NA, 
+"1"), class = "factor"), y = c(13270L, 455L)), class = "data.frame", row.names = c(NA, 
 -2L)), vnam = "neet1")
 ```
 
@@ -790,26 +790,26 @@ ggAggBarplot(data = structure(list(x = structure(1:2, .Label = c("0",
 
 \bminione
 
--------------------------------------------
-Feature                              Result
-------------------------- -----------------
-Variable type                        factor
+------------------------------------------
+Feature                             Result
+------------------------- ----------------
+Variable type                       factor
 
-Number of missing obs.      23104 (46.93 %)
+Number of missing obs.      1472 (10.45 %)
 
-Number of unique values                   2
+Number of unique values                  2
 
-Mode                                    "0"
+Mode                                   "0"
 
-Reference category                        0
--------------------------------------------
+Reference category                       0
+------------------------------------------
 
 
 \emini
 \bminitwo
 ```{r 'Var-19-neet2', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
 ggAggBarplot(data = structure(list(x = structure(1:2, .Label = c("0", 
-"1"), class = "factor"), y = c(24559L, 1569L)), class = "data.frame", row.names = c(NA, 
+"1"), class = "factor"), y = c(11915L, 695L)), class = "data.frame", row.names = c(NA, 
 -2L)), vnam = "neet2")
 ```
 
@@ -826,26 +826,26 @@ ggAggBarplot(data = structure(list(x = structure(1:2, .Label = c("0",
 
 \bminione
 
--------------------------------------------
-Feature                              Result
-------------------------- -----------------
-Variable type                        factor
+------------------------------------------
+Feature                             Result
+------------------------- ----------------
+Variable type                       factor
 
-Number of missing obs.      25036 (50.85 %)
+Number of missing obs.      2955 (20.98 %)
 
-Number of unique values                   2
+Number of unique values                  2
 
-Mode                                    "0"
+Mode                                   "0"
 
-Reference category                        0
--------------------------------------------
+Reference category                       0
+------------------------------------------
 
 
 \emini
 \bminitwo
 ```{r 'Var-20-neet3', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
 ggAggBarplot(data = structure(list(x = structure(1:2, .Label = c("0", 
-"1"), class = "factor"), y = c(22392L, 1804L)), class = "data.frame", row.names = c(NA, 
+"1"), class = "factor"), y = c(10371L, 756L)), class = "data.frame", row.names = c(NA, 
 -2L)), vnam = "neet3")
 ```
 
@@ -862,26 +862,26 @@ ggAggBarplot(data = structure(list(x = structure(1:2, .Label = c("0",
 
 \bminione
 
--------------------------------------------
-Feature                              Result
-------------------------- -----------------
-Variable type                        factor
+------------------------------------------
+Feature                             Result
+------------------------- ----------------
+Variable type                       factor
 
-Number of missing obs.      29333 (59.58 %)
+Number of missing obs.      4667 (33.14 %)
 
-Number of unique values                   2
+Number of unique values                  2
 
-Mode                                    "0"
+Mode                                   "0"
 
-Reference category                        0
--------------------------------------------
+Reference category                       0
+------------------------------------------
 
 
 \emini
 \bminitwo
 ```{r 'Var-21-neet4', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
 ggAggBarplot(data = structure(list(x = structure(1:2, .Label = c("0", 
-"1"), class = "factor"), y = c(18707L, 1192L)), class = "data.frame", row.names = c(NA, 
+"1"), class = "factor"), y = c(8919L, 496L)), class = "data.frame", row.names = c(NA, 
 -2L)), vnam = "neet4")
 ```
 
@@ -898,35 +898,32 @@ ggAggBarplot(data = structure(list(x = structure(1:2, .Label = c("0",
 
 \bminione
 
-----------------------------------------
-Feature                           Result
-------------------------- --------------
-Variable type                    numeric
+---------------------------------------
+Feature                          Result
+------------------------- -------------
+Variable type                   numeric
 
-Number of missing obs.      548 (1.11 %)
+Number of missing obs.          0 (0 %)
 
-Number of unique values             1073
+Number of unique values            1044
 
-Median                             -0.03
+Median                            -0.02
 
-1st and 3rd quartiles         -0.36; 0.3
+1st and 3rd quartiles       -0.34; 0.33
 
-Min. and max.                -2.36; 2.08
-----------------------------------------
+Min. and max.               -2.74; 2.01
+---------------------------------------
 
 
 \emini
 \bminitwo
 ```{r 'Var-22-sch-pc1', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
-ggAggHist(data = structure(list(xmin = c(-2.4, -2.2, -2, -1.8, 
--1.6, -1.4, -1.2, -1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 
-0.8, 1, 1.2, 1.4, 1.6, 1.8, 2), xmax = c(-2.2, -2, -1.8, -1.6, 
--1.4, -1.2, -1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 
-1, 1.2, 1.4, 1.6, 1.8, 2, 2.2), ymin = c(0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), ymax = c(1L, 
-0L, 14L, 62L, 30L, 118L, 243L, 1623L, 3167L, 5571L, 6568L, 8021L, 
-7778L, 5473L, 4225L, 3139L, 1270L, 706L, 226L, 140L, 232L, 35L, 
-42L)), class = "data.frame", row.names = c(NA, -23L)), vnam = "sch_pc1")
+ggAggHist(data = structure(list(xmin = c(-3, -2.5, -2, -1.5, 
+-1, -0.5, 0, 0.5, 1, 1.5, 2), xmax = c(-2.5, -2, -1.5, -1, -0.5, 
+0, 0.5, 1, 1.5, 2, 2.5), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0), ymax = c(2L, 10L, 64L, 249L, 1952L, 4991L, 4505L, 1923L, 
+329L, 56L, 1L)), class = "data.frame", row.names = c(NA, -11L
+)), vnam = "sch_pc1")
 ```
 
 \emini
@@ -940,35 +937,31 @@ ggAggHist(data = structure(list(xmin = c(-2.4, -2.2, -2, -1.8,
 
 \bminione
 
-----------------------------------------
-Feature                           Result
-------------------------- --------------
-Variable type                    numeric
+---------------------------------------
+Feature                          Result
+------------------------- -------------
+Variable type                   numeric
 
-Number of missing obs.      548 (1.11 %)
+Number of missing obs.          0 (0 %)
 
-Number of unique values             1073
+Number of unique values            1044
 
-Median                             -0.02
+Median                                0
 
-1st and 3rd quartiles        -0.37; 0.31
+1st and 3rd quartiles       -0.35; 0.35
 
-Min. and max.                 -1.8; 2.25
-----------------------------------------
+Min. and max.                  -2.27; 2
+---------------------------------------
 
 
 \emini
 \bminitwo
 ```{r 'Var-23-sch-pc2', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
-ggAggHist(data = structure(list(xmin = c(-1.8, -1.6, -1.4, -1.2, 
--1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 
-1.6, 1.8, 2, 2.2), xmax = c(-1.6, -1.4, -1.2, -1, -0.8, -0.6, 
--0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 
-2.2, 2.4), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0), ymax = c(18L, 59L, 29L, 279L, 1957L, 2901L, 
-5707L, 6164L, 8044L, 7726L, 6036L, 3997L, 3080L, 1277L, 775L, 
-213L, 83L, 171L, 126L, 0L, 42L)), class = "data.frame", row.names = c(NA, 
--21L)), vnam = "sch_pc2")
+ggAggHist(data = structure(list(xmin = c(-2.5, -2, -1.5, -1, 
+-0.5, 0, 0.5, 1, 1.5), xmax = c(-2, -1.5, -1, -0.5, 0, 0.5, 1, 
+1.5, 2), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0), ymax = c(13L, 55L, 
+271L, 2055L, 4719L, 4528L, 2037L, 347L, 57L)), class = "data.frame", row.names = c(NA, 
+-9L)), vnam = "sch_pc2")
 ```
 
 \emini
@@ -982,32 +975,31 @@ ggAggHist(data = structure(list(xmin = c(-1.8, -1.6, -1.4, -1.2,
 
 \bminione
 
-----------------------------------------
-Feature                           Result
-------------------------- --------------
-Variable type                    numeric
+---------------------------------------
+Feature                          Result
+------------------------- -------------
+Variable type                   numeric
 
-Number of missing obs.      548 (1.11 %)
+Number of missing obs.          0 (0 %)
 
-Number of unique values             1073
+Number of unique values            1044
 
-Median                             -0.03
+Median                            -0.02
 
-1st and 3rd quartiles        -0.35; 0.32
+1st and 3rd quartiles       -0.35; 0.34
 
-Min. and max.                -2.82; 2.04
-----------------------------------------
+Min. and max.               -2.28; 2.17
+---------------------------------------
 
 
 \emini
 \bminitwo
 ```{r 'Var-24-sch-pc3', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
-ggAggHist(data = structure(list(xmin = c(-3, -2.5, -2, -1.5, 
--1, -0.5, 0, 0.5, 1, 1.5, 2), xmax = c(-2.5, -2, -1.5, -1, -0.5, 
-0, 0.5, 1, 1.5, 2, 2.5), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0), ymax = c(1L, 9L, 70L, 492L, 6962L, 17488L, 16153L, 6075L, 
-1036L, 356L, 42L)), class = "data.frame", row.names = c(NA, -11L
-)), vnam = "sch_pc3")
+ggAggHist(data = structure(list(xmin = c(-2.5, -2, -1.5, -1, 
+-0.5, 0, 0.5, 1, 1.5, 2), xmax = c(-2, -1.5, -1, -0.5, 0, 0.5, 
+1, 1.5, 2, 2.5), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), ymax = c(6L, 
+51L, 300L, 1908L, 4933L, 4496L, 1911L, 420L, 56L, 1L)), class = "data.frame", row.names = c(NA, 
+-10L)), vnam = "sch_pc3")
 ```
 
 \emini
@@ -1021,35 +1013,32 @@ ggAggHist(data = structure(list(xmin = c(-3, -2.5, -2, -1.5,
 
 \bminione
 
-----------------------------------------
-Feature                           Result
-------------------------- --------------
-Variable type                    numeric
+---------------------------------------
+Feature                          Result
+------------------------- -------------
+Variable type                   numeric
 
-Number of missing obs.      548 (1.11 %)
+Number of missing obs.          0 (0 %)
 
-Number of unique values             1073
+Number of unique values            1044
 
-Median                             -0.03
+Median                            -0.01
 
-1st and 3rd quartiles         -0.37; 0.3
+1st and 3rd quartiles       -0.35; 0.34
 
-Min. and max.                 -2.2; 2.15
-----------------------------------------
+Min. and max.               -2.89; 2.47
+---------------------------------------
 
 
 \emini
 \bminitwo
 ```{r 'Var-25-sch-pc4', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
-ggAggHist(data = structure(list(xmin = c(-2.2, -2, -1.8, -1.6, 
--1.4, -1.2, -1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 
-1, 1.2, 1.4, 1.6, 1.8, 2), xmax = c(-2, -1.8, -1.6, -1.4, -1.2, 
--1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 
-1.6, 1.8, 2, 2.2), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), ymax = c(12L, 5L, 20L, 58L, 
-149L, 236L, 1366L, 3417L, 5961L, 6158L, 7867L, 7501L, 5885L, 
-4474L, 2707L, 1252L, 851L, 348L, 163L, 65L, 147L, 42L)), class = "data.frame", row.names = c(NA, 
--22L)), vnam = "sch_pc4")
+ggAggHist(data = structure(list(xmin = c(-3, -2.5, -2, -1.5, 
+-1, -0.5, 0, 0.5, 1, 1.5, 2), xmax = c(-2.5, -2, -1.5, -1, -0.5, 
+0, 0.5, 1, 1.5, 2, 2.5), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0), ymax = c(1L, 9L, 74L, 267L, 2036L, 4743L, 4560L, 1904L, 
+433L, 53L, 2L)), class = "data.frame", row.names = c(NA, -11L
+)), vnam = "sch_pc4")
 ```
 
 \emini
@@ -1063,32 +1052,35 @@ ggAggHist(data = structure(list(xmin = c(-2.2, -2, -1.8, -1.6,
 
 \bminione
 
-----------------------------------------
-Feature                           Result
-------------------------- --------------
-Variable type                    numeric
+---------------------------------------
+Feature                          Result
+------------------------- -------------
+Variable type                   numeric
 
-Number of missing obs.      548 (1.11 %)
+Number of missing obs.          0 (0 %)
 
-Number of unique values             1073
+Number of unique values            1044
 
-Median                             -0.01
+Median                            -0.01
 
-1st and 3rd quartiles         -0.37; 0.3
+1st and 3rd quartiles       -0.35; 0.34
 
-Min. and max.                 -3.1; 1.98
-----------------------------------------
+Min. and max.               -2.32; 1.68
+---------------------------------------
 
 
 \emini
 \bminitwo
 ```{r 'Var-26-sch-pc5', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
-ggAggHist(data = structure(list(xmin = c(-3.5, -3, -2.5, -2, 
--1.5, -1, -0.5, 0, 0.5, 1, 1.5), xmax = c(-3, -2.5, -2, -1.5, 
--1, -0.5, 0, 0.5, 1, 1.5, 2), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0), ymax = c(1L, 0L, 9L, 67L, 504L, 7485L, 16717L, 16475L, 
-5949L, 1063L, 414L)), class = "data.frame", row.names = c(NA, 
--11L)), vnam = "sch_pc5")
+ggAggHist(data = structure(list(xmin = c(-2.4, -2.2, -2, -1.8, 
+-1.6, -1.4, -1.2, -1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 
+0.8, 1, 1.2, 1.4, 1.6), xmax = c(-2.2, -2, -1.8, -1.6, -1.4, 
+-1.2, -1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 
+1.4, 1.6, 1.8), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 0), ymax = c(1L, 6L, 8L, 50L, 41L, 47L, 
+163L, 416L, 887L, 1481L, 1589L, 2454L, 2181L, 1706L, 1243L, 1010L, 
+383L, 259L, 39L, 62L, 56L)), class = "data.frame", row.names = c(NA, 
+-21L)), vnam = "sch_pc5")
 ```
 
 \emini
@@ -1102,32 +1094,31 @@ ggAggHist(data = structure(list(xmin = c(-3.5, -3, -2.5, -2,
 
 \bminione
 
-----------------------------------------
-Feature                           Result
-------------------------- --------------
-Variable type                    numeric
+---------------------------------------
+Feature                          Result
+------------------------- -------------
+Variable type                   numeric
 
-Number of missing obs.      611 (1.24 %)
+Number of missing obs.       1 (0.01 %)
 
-Number of unique values             1069
+Number of unique values            1044
 
-Median                             -0.08
+Median                              0.3
 
-1st and 3rd quartiles        -0.32; 0.22
+1st and 3rd quartiles       -0.04; 0.61
 
-Min. and max.                -4.06; 1.32
-----------------------------------------
+Min. and max.               -2.83; 1.61
+---------------------------------------
 
 
 \emini
 \bminitwo
 ```{r 'Var-27-sch-escs', echo=FALSE, fig.width=4, fig.height=3, message=FALSE, warning=FALSE}
-ggAggHist(data = structure(list(xmin = c(-4.5, -4, -3.5, -3, 
--2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1), xmax = c(-4, -3.5, -3, 
--2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5), ymin = c(0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 0), ymax = c(1L, 0L, 0L, 3L, 0L, 0L, 
-54L, 4418L, 22996L, 16114L, 4402L, 633L)), class = "data.frame", row.names = c(NA, 
--12L)), vnam = "sch_escs")
+ggAggHist(data = structure(list(xmin = c(-3, -2.5, -2, -1.5, 
+-1, -0.5, 0, 0.5, 1, 1.5), xmax = c(-2.5, -2, -1.5, -1, -0.5, 
+0, 0.5, 1, 1.5, 2), ymin = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), ymax = c(4L, 
+0L, 1L, 21L, 241L, 3571L, 5558L, 3728L, 954L, 3L)), class = "data.frame", row.names = c(NA, 
+-10L)), vnam = "sch_escs")
 ```
 
 \emini
@@ -1141,21 +1132,21 @@ ggAggHist(data = structure(list(xmin = c(-4.5, -4, -3.5, -3,
 
 Report generation information:
 
- *  Created by: Philip Parker (username: `philipparker`).
+ *  Created by: Philip Parker (username: `phparker`).
 
- *  Report creation time: Thu Feb 04 2021 11:52:32
+ *  Report creation time: Wed Jun 02 2021 11:40:28
 
- *  Report was run from directory: `/Users/philipparker/Dropbox/Projects_Research/CURRENT_WORKING/belonging_NEET`
+ *  Report was run from directory: `/Users/phparker/Dropbox/Projects_Research/IN REVIEW/belonging_NEET`
 
  *  dataMaid v1.4.0 [Pkg: 2019-12-10 from CRAN (R 4.0.2)]
 
- *  R version 4.0.2 (2020-06-22).
+ *  R version 4.0.3 (2020-10-10).
 
- *  Platform: x86_64-apple-darwin17.0 (64-bit)(macOS  10.16).
+ *  Platform: x86_64-apple-darwin17.0 (64-bit)(macOS Mojave 10.14.5).
 
  *  Function call: `dataMaid::makeDataReport(data = combined_data %>% select(-schid), 
     render = FALSE, mode = c("summarize", "visualize", "check"
-    ), smartNum = FALSE, file = "/Users/philipparker/Dropbox/Projects_Research/CURRENT_WORKING/belonging_NEET/documentation/codebook.pdf", 
+    ), smartNum = FALSE, file = "/Users/phparker/Dropbox/Projects_Research/IN REVIEW/belonging_NEET/documentation/codebook.pdf", 
     replace = TRUE, standAlone = FALSE, checks = list(character = "showAllFactorLevels", 
         factor = "showAllFactorLevels", labelled = "showAllFactorLevels", 
         haven_labelled = "showAllFactorLevels", numeric = NULL, 
