@@ -1,7 +1,7 @@
 ---
 title             : "School Belonging Predicts whether an Emerging Adult will be Not in Education, Employment, or Training (NEET) after School"
 shorttitle        : "School Belonging and NEET"
-wordcount         : "6384"
+wordcount         : "6427"
 keywords          : "school belonging; NEET; emerging adults; longitudinal"
 abstract: |
   Youth with low school belonging or who are Not (being) in Employment, Education, or Training (NEET) are at the margins of critical social institutions. Yet little research has considered whether school belonging is a risk factor for later NEET. Using two longitudinal cohorts from Australia (*N* = 14,082; 51% Boys), we explore this relationship. Controlling for a range of individual and school level covariates, we find that school belonging at age 15 is a consistent and practically significant predictor of NEET status at ages 16-20. We found that this relationship is not the product of school belonging lowering the chances of students graduating high-school. Rather, school belonging had a unique impact beyond graduation. Given the costs of NEET, school belonging is of significant policy concern.
@@ -11,7 +11,7 @@ output:
   papaja::apa6_pdf:
     includes:
       after_body: "appendix.tex"
-    pandoc_args: ['--metadata-file=code/common.yaml']
+    pandoc_args: ['--metadata-file=code/common-blinded.yaml']
     keep_md: yes
 bibliography: code/references.bib
 header-includes:
@@ -218,9 +218,6 @@ Immigrant & 0.04 & 0.00 & 0.08\\
 School Average SES (SD Units) & -0.01 & -0.07 & 0.05\\
 School Average Achievement (Sd Units) & 0.04 & -0.02 & 0.09\\
 Cohort (2015) & -0.20 & -0.24 & -0.16\\
-Random Intercept: School & 0.01 &  & \\
-Residual Variance & 0.93 &  & \\
-School ICC & 0.01 &  & \\
 \bottomrule
 \end{tabular}
 
@@ -233,7 +230,7 @@ We first tested whether our demographic and academic achievement variables predi
 
 We also tested whether these individual-level estimates differed by cohort. Comparing this multi-group model to a model that just controlled for cohort indicated that the latter was a significantly better fitting model (F (6, 69039.669) = 2.584, p = 0.017)[^2]. There were two significant differences by cohort for the influence of gender on belonging and for the influence of achievement on belonging. Exploring the marginal means for these significant interactions showed trivial differences (see Figure \@ref(fig:fig-belong)).
 
-[^2]: Note the F-test here is a multiple imputation version of a chi-square log-likelihood ratio test.
+[^2]: Note the F-test here is a multiple imputation version of a chi-square log-likelihood ratio test [@meng1992].
 
 (ref:belong-interaction) Cohort Differences in Predicting School Belonging.
 
@@ -380,7 +377,7 @@ Outside of school belonging, predictors of NEET status followed established rela
 
 Although the current paper has notable strengths (e.g., multiple cohorts of longitudinal data), there are limitations that readers should consider when interpreting its results. We noted in the discussion that belonging forces a spotlight not just on disadvantage due to social location but also on disadvantage related to other forms of self or group identity. Interestingly, the role of social locations in predicting school belonging appeared to be relatively weak. Yet, in our current research, we were not able to do full justice to an exploration of the role of social locations. As Yuval-Davis [-@yuval-davis2006, p.200] notes, social locations "even in their most stable format, are virtually never constructed along one power axis of difference, although official statistics--as well as identity politics--often tend to construct them in this way. This is why the intersectional approach to social locations is so crucially important." To capture a true intersectional perspective we would have needed to estimate very complex higher-order interactions which we simply did not have the power to address. Indeed, it may be questioned whether a truly intersectional approach can even be addressed in any quantitative research, thus highlighting the need for continual and integrated qualitative research. Nevertheless, future research may be able to take a more truly intersectional perspective by looking at the multiplicative rather than additive influences of social location variables (e.g., gender, social class, place, and ethnicity).
 
-It should also be noted that we only explored outcomes up to the age of 20 as this was the only data we had access to. Traditionally, NEET research is concerned with the full period of age 15-24 years of age. Of particular interest, youth who remain or become NEET at age 24 will likely have considerably worse lifetime outcomes than those who are NEET at age 20.
+It should also be noted that we only explored outcomes up to the age of 20 as this was the only data we had access to. Traditionally, NEET research is concerned with the full period of age 15-24 years of age. Of particular interest, youth who remain or become NEET at age 24 will likely have considerably worse lifetime outcomes than those who are NEET at age 20. In addition, the loss in sample size going from the Australian PISA sample to the LSAY sample is a concern. Yet it is encouraging that results were largely similar when the sample was defined as the PISA sample or the LSAY sample.
 
 Finally, while we aimed to control for a range of covariates at the individual and school level, there are likely other variables that we did not control for and that could have biased the results. As such, the results of the current research are most safely interpreted *comparatively* (i.e., what is the likely NEET status of a youth at age 16-20 who is high on school belonging at age 15 compared to a similar youth who is low on belonging) rather than *causally* (i.e., what is the causal effect of school belonging at age 15 on NEET status at age 16-20).
 

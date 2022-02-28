@@ -1,0 +1,948 @@
+---
+title          : "School Belonging Predicts whether an Emerging Adult will be Not in Education, Employment, or Training (NEET) after School"
+authors        : "Author name on behalf of co-authors"
+journal        : "Journal of Educational Psychology"
+manuscript     : "EDU-2021-1158"
+handling_editor: "Samuel Greiff"
+
+bibliography      : code/references.bib
+csl               : "apa7.csl"
+output            : revise::letter
+header-includes:
+   - \usepackage{hyphenat}
+   - \usepackage{threeparttable}
+   - \usepackage{makecell}
+   - \usepackage{booktabs}
+   - \usepackage{longtable}
+   - \usepackage{hyperref}
+   - \usepackage{apa7}
+   - \overfullrule=0pt
+   - \usepackage{color}
+   - \hypersetup{colorlinks = false,pdfborder={1 1 1}}
+   - \usepackage{float}
+   - \floatplacement{figure}{H}
+---
+
+```{=tex}
+
+\hyphenpenalty=50
+
+\newenvironment{CSLReferences}%
+{\setlength{\parindent}{0pt}%
+\everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
+
+```
+
+Dear Dr. `r rmarkdown::metadata$handling_editor`,
+
+Thank you for considering our manuscript for publication at *`r rmarkdown::metadata$journal`*. We appreciate the feedback that you, and the reviewers have provided. The suggested changes were useful and, in our opinion, have improved the manuscript. In the following itemised list we respond to each comment point-by-point.
+
+One change not asked for, but which we think will help the reader, is we have moved the appendixes to supplementary materials. It was clear in the review process that the inclusion of sensitivity analyses in the appendix caused confusion.
+
+```{r}
+ knitr::knit_engines$set(reviewer = revise:::process_chunk)
+ manuscript <- revise::read_manuscript("manuscript.Rmd", PDF = FALSE)
+ get_revision <- function(id, ...) revise::get_revision(manuscript, id, ...)
+ library(targets)
+ knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE, dpi = 300)
+knitr::opts_chunk$set(fig.pos = "!H", out.extra = "")
+options(knitr.table.format = "latex")
+```
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\newcounter{C}
+
+# Reviewer \#1
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c1}{}
+
+Thank you for sending me the paper for review. In accordance with my feedback to the journal editor, I focus in this review on the education, labour market and policy aspect of the paper, and not on methodological issues. My overall verdict is that the topic, research question and hypotheses of the paper are relevant and important, and that the paper can be an important contribution to its research field. With that said, I would like to raise some minor issues that I think should be ironed out before the paper is publishable. 
+
+  }
+```
+Thank you. We appreciate the value you saw in our work and we appreciate the comments.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c2}{}
+
+First, a general issue: You ask if and state that school belonging is a risk factor for NEET status many times in the paper. However, it seems to me that it is rather "low school belonging" that is a risk factor? Please consider adding "low" where relevant.
+
+
+  }
+```
+Yes this is a good point. We have made this change throughout.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c3}{}
+
+P. 3: You refer to youth who are NEET as "[a] transition", which is not preise. NEET is a status into which one transitions when failing to transition to other statuses, such as being in further education or working. Please rephrase.
+
+  }
+```
+Good point. We have made this change.
+
+`r get_revision('transition')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c4}{}
+
+P. 4: The clause "as one way in which youth are placed at the margins of critical social institutions" seems to be to refer to low school belonging and not school belonging in general, which is just a scale. Please consider adding "low" before "school belonging" or adding "(or not)" to the clause.
+
+  }
+```
+Good point. This sentence has been removed as part of the revision. However, as above (\hyperlink{r1c2}{Reviewer 1 Comment 2}), we have added low before school belonging where relevant.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c5}{}
+
+P. 4: The sentence "And understanding NEET as part of wider social exclusion is needed (Thompson, 2011)" seems incomplete. Please rewrite.
+
+  }
+```
+This sentence has also been removed as part of the rewrite requested by other reviewers.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c6}{}
+
+P. 4: You write: "A lack of school belonging has been found to predict social exclusion (Arslan et al., 2020) and social exclusion at school may create a pattern of exclusion throughout life." Here, the term social exclusion is used twice, and seemingly to refer to different things. Please be more precise.
+
+  }
+```
+Apologies. We were trying to state a chain in mechanisms not to imply two different types of social exclusion. We have now corrected this.
+
+`r get_revision('exclusion')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c7}{}
+
+P. 8: The abbreviation "SES" is defined upon the second and not the first use. Please correct.
+
+  }
+```
+Apologies. This has now been corrected.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c8}{}
+
+P. 10: In hypothesis 4, you refer to "high-school graduation". To me, this is unclear. Could you write "having graduated from high-school" or something more clear?
+
+  }
+```
+Thank you. We have made the suggested change:
+
+`r get_revision('h4')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c9}{}
+
+P. 11: You define NEET as youth who "... were not in the labour market". This is not fully consistent with the claim on p. 15 that you focus on "employment status". Indeed, in most technical definitions, not being employed is not the same as being unemployed. The unemployed are in the labour market, even though they are not working, while those who are not in the labour market are called "inactive". I think you may want to write "were unemployed or not in the labour market" instead. Please consult Elder (2015) for more details on this issue. (Alternatively, if "unemployed" is a self-reported status here, please explain this to the reader.)
+
+  }
+```
+The reviewer is correct. We have made the suggested changes to the definition of NEET.
+
+`r get_revision('neetdef')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c10}{}
+
+P. 16: You write "being female", but in line with how gender is self reported in your data, perhaps "identifying as female" is more precise?
+
+  }
+```
+This has been corrected:
+
+`r get_revision('femaleident')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c11}{}
+
+P. 18: The bracketed text "(almost all youth who graduated high-school did not experience NEET)" is better phrased as "(almost no youth who graduated high-school experienced NEET)".
+
+  }
+  
+```
+In responding to the other reviewers comments this section has been deleted.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c12}{}
+
+P. 19: You state that your results "hint that high levels of school belonging among non-graduates could help mitigate" concerns that "not graduating high-school is a significant risk factor for a range of outcomes including lifetime earnings, welfare requirements, health, and employability". The mediating factor NEET status is omitted in this argument, which I find problematic.
+
+  }
+```
+This has been corrected.
+
+`r get_revision('hint')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c13}{}
+
+P. 22: The sentence: "The link in our research between low school belonging and NEET, and empirical research linking NEET to a lifetime of disadvantage (Ralston et al., 2016), can be viewed as the accumulation of disadvantage by those raised on the fringes of society." This implies that "low school belonging" and being "raised on the fringes of society" are one and the same thing. Are they?
+
+  }
+  
+```
+This has been reworded to be more specific:
+
+`r get_revision('fringe')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c14}{}
+
+P. 22: You write that "[t]he role of identity, the politics of belonging, and the authentic self are meaningful avenues for future research on school belonging." There is, however, a substantial qualitative literature on this topic that you may want to at least acknowledge with a reference - starting, in many people's view, with Willis (1977).
+
+  }
+```
+This section has had a significant rewrite and simplification. Nevertheless, we read Learning to Labour and agree that it is highly relevant and we cite it in several places. For example, we now write:
+
+`r get_revision('alternate')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c15}{}
+
+P. 22: You write about "a rich school". This is ambiguous to me. Is it the school, the students' families or both that are rich?
+
+  }
+```
+This has been corrected:
+
+`r get_revision('schavg')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c16}{}
+
+P. 23: You state that "[t]raditionally, NEET research is concerned with the full period of age 15-24 years of age". Technically, this is not correct. The earliest resarch using this concept, such as the British Social Exclusion Unit's (1999) Bridging the Gap and Bynner and Parson's (2002) Social exclusion and ... (which you refer to), considered NEET for smaller age ranges, as Holte (2018), whom you refer to, remarks on. However, it is true that much of the international literature now uses broader age ranges. Please rephrase.
+
+  }
+```
+In the rewrite this mistake was removed. Indeed, this whole section was reworded to accommodate other reqested changes. 
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c17}{}
+
+P 23: The sentence claiming that being NEET at age 24 will result in worse lifetime outcomes than being NEET at age 20 needs to be substantiated with a literature reference or removed; I am not convinced that this is the case.
+
+  }
+```
+The reviewer is correct that this is purely speculation on our part. As such, we have removed this claim.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r1c18}{}
+
+P. 24: In my view, please state the main empirical result, i.e. that there is correlation between low school belonging and later NEET status, which is relevant especialyl among those who do not greaduate from high school, in the conclusion.
+
+  }
+```
+We agree. The conclusion now reads:
+
+`r get_revision('conclusion')`
+
+\newpage
+
+\setcounter{C}{0}
+
+# Reviewer \#2
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r2c1}{}
+
+The submitted manuscript, "School belonging predicts whether an emerging adult will be not in education, employment, or training (NEET) after school" uses two secondary longitudinal datasets from LSAY to determine the extent to which school belonging predicts NEET status. The authors conclude that school belonging does, indeed, predict NEET, and therefore recommend that policy makers develop interventions to support students' sense of belonging.
+
+There were several aspects of the manuscript that were quite strong. For example, I found the use of two, large, longitudinal datasets, one from 2003 and the other 2015, to be an interesting way to consider potential differences or similarities across two time contexts. I also appreciated the authors' focus on school belonging as a potential predictor of NEET, rather than only including more traditional constructs such as SES or high school graduation. The focus on school belonging provides a bit more nuance to this issue.
+
+However, I have several concerns that may or may not be able to be addressed in a revision. I cannot recommend publication in the Journal of Educational Psychology in its current form.
+
+  }
+```
+We thank the reviewer for noting the strengths of the paper. We also appreciate that they have noted that "The authors and I likely operate from different paradigms". Although we work from different paradigms, we appreciate the collegial and thoughtful spirit in which the comments were made. Although, we disagree with some of the comments below (or at least do not agree that the reviewers interpretation of our text is what we intended), we acknowledge that, even where we disagree, thinking carefully about what the reviewer has said has resulted in us changing the framing of the paper in a way that we think better articulates what we are trying to say. We also acknowledge that in many places our writing was confusing and needlessly complex. We hope we have addressed this in the revision.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r2c2}{}
+
+My primary concern is regarding the deficit (and sometimes dehumanizing) language used throughout the manuscript, which shapes the research questions, analyses, and conclusions. The authors and I likely operate from different paradigms, so I'd like to explain how this work came across to me, with the hope that it might offer some food for thought for the authors.
+
+This research assumes that there is something "wrong" with students labeled as NEET. Even the idea of NEET as a construct strikes me as a bit dehumanizing, and I question whether it is a construct worthy of study. What does it mean for students to live on the "margins of society" or be "at risk?" What are students "at risk" for? It seems as though the issue lies more with the institutions, rather than the humans being studied. This also requires us to consider why we want students to thrive in a White, heteronormative society, rather than consider issues with the context itself. In the discussion, the authors briefly talk about issues of inequality, but the blame still seems to be put on the adolescents themselves. The implied conclusion is that policy makers and educators need to fix students - that there is something wrong with their sense of belonging, and therefore we need to intervene at the student level to figure out how make them better fit into existing societies and expectations. This is exacerbated by the focus on the impact of NEET on the economy, which is a dehumanizing way to consider the needs of real people. Although I understand that some readers may find the economic impact to be a strong argument, I found it quite off-putting, as it considers people in accordance to the cost they place on a society, instead of focusing on the real humans who may not be appropriately supported by institutions. Instead, perhaps the more meaningful questions revolve around why some students do or do not feel a strong sense of belonging and how institutions, like schools, can change to better meet students where they are.
+
+Given this concern, I encourage the authors to shift to using more asset-based language and consider the real repercussions for labeling students as at risk, on the margins, or NEET.
+
+  }
+```
+Before going into detail we want to note that we have substantially revised the entire manuscript in response to this comment. We agree that we were often clumsy in our wording and could have been much clearer. We apologise that our shortcomings led the reviewers to read our paper as deficit orientated. We think this is most evident in the new introduction:
+
+`r get_revision('newintro')`
+
+We think it is worth stating upfront that deficit orientation is a concept with multiple different viewpoints in the literature [@davis2019]. We view deficit orientated research to be inherently about blaming victims rather than recognizing context and acknowledging the role of social institutions. We agree with Davis and Museus [-@davis2019] that anti-deficit research should:
+
+a)  Acknowledge systemic influences and challenge the perspective that full engagement with social institutions, as currently structured, are the primary solution to disadvantage.
+b)  Aim to articulate pervasive and often implicit nature of deficit orientation so that standard concepts don't go unchallenged.
+c)  Aim to challenge core social institutions for their role in perpetuating disadvantage.
+
+We believe our paper is indeed anti-deficit in nature and we certainly did not intend to imply that there is something 'wrong' with youth who are NEET. Indeed, we believe our research does the very opposite. For example, our aims were:
+
+a)  To challenge the notion that formal education was the solution to NEET. Rather our aim was to show that schools themselves may be vectors by which students may find their transition from school hampered by focusing on experiences of school belonging. We aimed to do this by positioning school belonging within the concept of the politics of belonging. The central idea being that it is systemic influences that decide who gets, and who does not get, to belong.
+b)  Our research challenges the concept or meritocracy as it relates to NEET. We aim to show, for example, how factors unrelated to 'merit' (where merit is wrongly assumed to mean academic achievement) contribute to a young person's post high-school pathways.
+c)  In the discussion we focus on mechanisms that are anti-deficit. For example, we discuss the role of social closure (the idea that wealthy parents hoard the resources necessary for their children to maintain their social position).
+d)  Most of the team's background is in psychology. Thus, we acknowledge that we mostly write about how certain social positions are embodied and experienced by individuals and we argue that it is worth focusing research on this individual experience (in our case, the experience of feeling lonely at school and the way this might contribute to later life outcomes) provided such research acknowledges the critical role of systemic influences. We do not believe a focus on individual experience is deficit orientated when it is, in our case, couched in systemic influences (i.e., systemic influences on who does and does not get to belong).
+
+
+There are other areas we do not agree with the reviewer. In particular, we do not think researching NEET is itself dehumanizing. We understand the reviewers position---indeed we reference several of criticisms of the NEET concept in the paper for the interested reader---but we believe it is important to acknowledge that youth who meet definitions of NEET do tend to face significant lifetime disadvantage. Acknowledging that fact that being outside employment, education, or training as a young person is often associated with hardship is not the same as suggesting that these outcomes are merited. We also do not believe it is deficit orientated to acknowledge that NEET has societal costs not just individual costs (though we have removed all reference to the economic costs of NEET).
+
+Nevertheless, in reviewing our paper we do believe we could have done a much better job of outlining our beliefs. In particular, we think the opening should have identified systemic influences earlier and more forcefully. We also agree that we could have simply stated an anti-deficit position from the outset (see \hyperlink{r2c2}{Reviewer 2 Comment 2}). We also aim to close the paper on a much stronger anti-deficit position:
+
+`r get_revision('conclusion')`
+
+We also believe we should have written about the politics of belonging more succinctly and not allowed our writing on this topic to be so watered down. We have now removed the discussion about identity and provided and much clearer and shorter discussion of the politics of belonging:
+
+`r get_revision('politics')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r2c3}{}
+
+Although the authors used a secondary dataset, I have several questions about the measures. Why were only three ethnicities utilized? Is this typical of data collected in Australia? These three options may substantially limit students' responses and may not be truly representative of their identities.
+
+
+  }
+```
+Australia is one of four traditional multicultural societies (along with the UK, Canada, and New Zealand). Almost 50% of the population are either first or second generation migrants but there is huge diversity in the countries this represents with large European (Continental and otherwise), Asian, Pacific, and Middle Eastern populations. Australia also has an Indigenous population who are made up of Torres Strait Islanders and a large number of individual nations. We could have been more fine-grained but we specifically choose not to. First, inclusion of many sparse groups that contain relatively small number of people are low on power and may artificially produce results that give a misleading picture. Instead, we have provided more information in the methods of the sample breakdown:
+
+`r get_revision('sampleDescription')`
+
+We also acknowledge, in the limitations, concerns with our approach:
+
+`r get_revision('qualneeds')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r2c4}{}
+
+Additionally, why were contexts labeled as either urban or provincial and how was this binary determined? What about suburban students? In the U.S. there are several different designations for rural populations, and students who live in remote rural areas have different opportunities and access issues than students who live just outside of town or a small city. This simplistic binary is concerning given the nuance that could be found in varying contexts.
+
+
+  }
+```
+As above (\hyperlink{r2c3}{Reviewer 2 Comment 3}) this was a deliberate decision to ensure results were robust and not misleading. As shown above (\hyperlink{r2c3}{Reviewer 2 Comment 3}) we have provided a more detailed breakdown in the methods. The distinction we have used is a common one in the Australian context.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r2c5}{}
+
+Please clarify how SES was determined. How are some occupations considered "higher class" than others? For example, an HVAC technician may make more money than a university professor (and in my community, usually do). So, who would be considered "higher class" and is that designation fair? How can we rank parental occupation in this way? And then later, why are there only 3 classifications for social class?
+
+
+  }
+```
+SES was taken from the OECD developed Economic Social and Cultural Scale (ESCS) present in all PISA cycles. As noted in the paper this is a composite measure of *parental education, household resources, and parents occupational prestige*. PISA defines parental occupational prestige in this composite via the International socio-economic index of occupational status [@ganzeboom1992]. The scale is based on assigning occupations scores based on a model that maximises the role of occupation as a mediating variable between education and income. We clarify this in the paper:
+
+`r get_revision('sesmeasure')`
+
+This ESCS composite is a continuous measure. Critically, this is the central measure we use in the paper. Social class *only* appears in sensitivity analysis in supplementary material.
+
+Social class is based on a transformation of the parents occupation as coded by the International Standard Classification of Occupations. The transformation is to place these occupations into the EGP coding scheme (Goldthorpe/Erikson/Portocarero class schemes). This is a very common social class coding scheme particularly in Europe. This classification is based on the theory of Max Weber. Here social class is based on social relations in economic life and particularly in relation to the nature of relationships between employee and employer [@chan2007]. The EGP has two dimensions upon which classes are defined. First is the amount of authority/autonomy an individual has in their employment relations (more authority is associated with higher status). Second is the degree to which people work with symbols (or sometimes the management of people) versus things (e.g., manufacturing). The former convey higher status. It is critical to note that EGP is not designed to ascribe inherent value but to capture social status as it is experienced. 
+
+We retain only three classes for similar reasons to ethnicity and rural/urban divide. It helps ensure sufficient statistical power but it is also consistent with how the EGP scheme is typically used in empirical research [@chan2007]. We appreciate that the number of classes to extract is a complex issue. This can vary from hundreds of classes in neo-Durkheim micro-class systems to three as we do here. Given that social class is a control variable and also only present in sensitivity analysis (and never in the main analysis) we believe our approach is consistent with previous literature and reasonable.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r2c6}{}
+
+Regarding the NEET measure, how was "being in the labor market" determined? What about those who participate in the gig economy, but aren't provided health insurance or a living wage? What about students who take care of family members, such as full time parents, those who care for elderly family members, etc. Are they labeled as NEET?
+
+
+  }
+```
+Here we used the LSAY derived labour force status which is a combination of multiple responses from participants during an extended interview. Here we combine both those listed as unemployed as well as those not in the labour force. That is consistent with the definition described by reviewer 1 as "were unemployed or not in the labour market". As the reviewer rightly points out [see @elder2015does] NEET status is different from research on unemployment as it is designed to capture 'a wide range of vulnerabilities' in young people and this includes not only the unemployed but also those out of the labour market and thus would capture many of the groups you mention. The only one we do not clearly cover is work in the gig economy. Gig work is not collected in LSAY in the cohorts and waves we cover. We believe our approach to labour market status is: a) consistent with the general definition of NEET [@elder2015does]; and b) consistent with the written advice we received from the government National Centre for Vocational Education Research on how to define NEET in LSAY.
+
+In passing it is worth noting that the Australian context is somewhat different from the US context. For example, the reviewer points to health insurance status. This is not relevant in the same way given Australia has universal health care that is not tied to employment or insurance.
+
+The reviewer notes students who are unpaid carers. These participants would not be identified as NEET because they are students. Fulltime carers would be characterized as NEET. As such, we have added the following section in the introduction to better contextualize what our research question's limitations:
+
+`r get_revision('alternate')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r2c7}{}
+
+The authors need to provide more information about how the data were collected. Although the authors direct readers to the LSAY website, it would be helpful to have some additional information clearly stated in the document itself. For example, please describe the number of waves, whether all measures were included in all waves, whether data were collected at similar timepoints each year, etc. Then, if readers would like more information, they can check out the website.
+
+
+  }
+```
+Thank you. This information has now been added.
+
+`r get_revision('lsaydescrib')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r2c8}{}
+
+Throughout the manuscript, but most prominently in the discussion, the authors use the term meaningfully or practically significant. This term needs to be unpacked. What do the authors mean how is this determined? Is practical significance a subjective designation? If so, that's okay, but the process for determining practical significance should be transparent.
+
+
+  }
+```
+Apologies. This was defined in the pre-registration but the reviewer is correct that it was not defined in the paper. We do so in the introduction:
+
+`r get_revision('alternate')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r2c9}{}
+
+Additionally, the authors need to be clearer regarding the potential implications of this work for future research as well as practice and policy. Simply stating that the Matthew Effect might be at play doesn't tell readers a lot about why this research is important and the practical actions that could be taken to support students in more meaningful ways. What would a school belonging intervention look like and is this the best way to influence students' long-term goals and experiences?
+
+
+  }
+```
+Prior to the *Conclusion* section, we have now added an *Implications* section to make clear the potential implications for future research, practice and policy.
+
+`r get_revision('implications')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r2c10}{}
+
+Be sure to use APA 7th edition throughout the manuscript. For example, "figure" should now be above the figure, as done with tables. Also, why are some tables listed as part of the appendices?
+
+  }
+```
+Apologies. We were using the JEP submission Latex engine which has not yet been updated to APA 7. We are not really sure how to fix this but did inform the editorial team at the initial submission (and they approved the submission). This would be fixed in the publication where the journal will transform the latex file via there custom template.
+
+The tables listed in the appendix are supplementary materials. They are mostly from sensitivity models (i.e., replacing SES with social class, using GEE rather than multilevel model, etc.) and were listed as supplementary materials in the paper. To make this clearer, we have moved them from an appendix to supplementary materials.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r2c11}{}
+
+Watch for minor typing errors (e.g., belong instead of belonging ¬- p. 10, using data as singular - table 1)
+
+  }
+```
+Thank you. We have given the paper a careful edit.
+
+<!-- rhiannon to do -->
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r2c12}{}
+
+Consider adjusting the title. The use of the word "after" is confusing, since for me I would think of an after school program, rather than post-graduation.
+
+  }
+```
+Good point. We have replaced after school with post high-school.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r2c13}{}
+
+I could not locate the Muir et al., 2015 citation, which is heavily cited. Is there a different citation that could be used instead?
+
+  }
+```
+We believe this citation is important, given its focus on NEET in Australia. This citation is to a chapter in a Brill publication. Brill is a standard academic publisher and an e-version is available via [Springer's Humanities, Social Science, and Law collection](https://link.springer.com/book/10.1007%2F978-94-6300-121-2) which most academic libraries are likely to have a subscription to.
+
+\newpage
+
+\setcounter{C}{0}
+
+# Reviewer \#3
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r3c1}{}
+
+This paper is well written. The models are fairly sophisticated, although apart from their mathematical expression, little narrative is devoted to their explication. Perhaps a more expansive discussion of the model and model fitting exercise are contained in the supplementary materials, to which reviewers appear not to have access. This also appears to be a pre-registered report (?), suggesting that the analysis plan has been approved by JEP or another registering service at an earlier date, which puts the current suite of reviewers at somewhat of a disadvantage, particularly if their interest is primarily methodological. Assuming as much, and assuming reviewers of the original registered report were in support of the analysis plan, I'm inclined to recommend publication...again on the assumption that key information is contained in the supplementary materials.
+
+
+  }
+```
+We apologies that you were not able to access the pre-registration. It was attached to the submission as supplementary materials and, although it worked for us, we understand that the vagaries of the submission system mean this may not always be the case for everyone. Rest assured that the editorial team did have access to the unblinded pre-registration.
+
+Nevertheless, we really appreciate your comments. We have expanded upon the model as follows:
+
+`r get_revision('modelinfo')`
+
+\newpage
+
+\setcounter{C}{0}
+
+# Reviewer \#4
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c1}{}
+
+School Belonging Predicts whether an Emerging Adult will be Not In Education, Employment, or Training (NEET) after School
+In School Belonging Predicts whether an Emerging Adult will be Not In Education, Employment, or Training (NEET) after School¸ the authors use PISA data to assess whether school belonging, along with a host of other demographic variables, predicts youth not being in employment, education, or training (NEET) between the ages of 16-20. They test this using a series of logistic multilevel models. The authors conclude that school belonging at age 15 predicts NEET status in that school belonging is a protective factor of being NEET in ages 16-20. The authors suggest that this relationship is not likely accounted for by the relationship between belonging and high school graduation. The authors argue that school belonging is an important policy concern for economic reasons with NEET youth costing the economy billions of dollars per year.
+
+The focus of the study has important policy implications as well as the potential to inform diversity, equity, and inclusion efforts. The authors adequately justify the importance of the work and explain their methods generally well. However, in its current form there are a range of issues with the manuscript that prevent me from suggesting acceptance at this time. Issues are detailed below by section but I will highlight a few here.
+
+  }
+```
+We really appreciate your comments here. We thank you for noting the strengths of the paper and we hope we have addressed your concerns in the revision.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c2}{}
+
+First, the introduction relies on outdated and limited literature in terms of its description of identity and belonging. The vague descriptions of "identity capital" and "politics of belonging" in the introduction and discussion of the manuscript are not only unclear in their meaning and how they inform the current study but also raise concerns in their general deficit framing.
+
+  }
+```
+Identity capital has been removed from the paper and we now streamline the section on the politics of belonging to show more clearly how it is related. Importantly, as we outline in detail above (\hyperlink{r2c2}{Reviewer 2 Comment 2}), the politics of belonging is specifically anti-deficit and that is the reason for its inclusion. That is, it focuses on how systemic factors determine who does and does not belong. We have now made this clearer:
+
+`r get_revision('politics')`
+
+We have also introduced newer research on the related topic of inclusion in the introduction. This reads:
+
+`r get_revision('newintro')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c3}{}
+
+Further, some decisions regarding analyses are not strongly justified (e.g., collapsing across cohorts, using 5 of the available 10 PVs in 2015 cohort, not testing the hypothesized mediation, only using 5 imputed datasets, repeated predictor in regression tables, etc.). 
+
+  }
+```
+We address these issues below.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c4}{}
+
+For these reasons and those detailed below, the findings are unclear as are the potential contributions this manuscript makes to the large and mostly uncited body of work on school belonging.
+
+  }
+```
+We make reference to research on school belonging mostly from the last 10 years; including a brand new special issue on the topic:
+
+`r get_revision('belonglit')`
+
+We have also added more recent literature on belonging in the discussion:
+
+`r get_revision('implications')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c5}{}
+
+P. 6. Paragraphs of "politics of belonging" and "identity capital" are quite unclear in their meaning as well as how they inform the study. There seem to be many underlying assumptions that the authors have about the development of identity that aren't coming through here and need to be supported with literature on this matter. The few citations included are quite old and do not truly address identity development or the development of belonging. There is much classic work by Goodenow and Anderman on school belonging that could inform this work as well as a larger body of recent work. There is also much discussion of something called the "politics of belonging" with one citation used repeatedly. Is there a larger body of work to pull from in support of this theory? Please clarify the meaning of these paragraphs.
+
+  }
+```
+The section on the politics of belonging has been streamlined extensively (see \hyperlink{r2c2}{Reviewer 2 Comment 2 above}). We also note that the politics of belonging aimed to provide the mechanism between belonging and NEET. There is an extended section on the concept of school belonging itself which does have extensive citation to recent work (see \hyperlink{r4c4}{Reviewer 4 Comment 4 above}).
+
+Also we wanted to affirm that we have conceptualise school belonging based on Goodenow and Gradey's definition: "A student's sense of school belonging has been defined as their sense of affiliation with their school and how accepted, respected, included, and supported they feel by others within their school environment (Goodenow & Grady, 1993)" as we acknowledge this is the most widely used definitions.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c6}{}
+
+The meaning of the last sentence regarding "low identity capital" and an identity market is very unclear. What is an identity market? Are the authors suggesting that one can either feel a strong sense of belonging to school or the labor market and these two are competing in some way? Would the authors suggest this to hold true for low SES participants as well considering that working while attending school is the norm for this group?
+
+  }
+```
+This section has been removed as part of the revision.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c7}{}
+
+P. 6: What are 21st century skills?
+
+  }
+```
+This term has now been removed from the manuscript.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c8}{}
+
+P. 8: "It is also possible that these factors are linked via third variables such as…etc. For this reason, it is critical that our research controls for these factors." Do the authors mean to say that for this reason they assess these variables as moderators or mediators? If the authors believe that some of these factors explain the relationship between NEET and school belonging, one would expect these to be treated differently than simple controls. The authors need to differentiate between what they see as controls and what they see as important explanatory variables to be tested as mediators or moderators.
+* P. 9: Authors state which variables have "significant relationships with NEET" but do not clarify what those relationships are. For example, what does it mean that gender, SES, place, and ethnicity are predictors? In which direction and in what magnitude?
+
+  }
+```
+Here we mean that control variables need to be added to help account for potential confounding (i.e., omitted variable bias). The point about being more specific about the confounding relationships is well made. We have now corrected this:
+
+`r get_revision('controls')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c9}{}
+
+As a result of all of this, hypothesis 2 quite vague.
+
+  }
+```
+We note that H2 is an exploratory hypothesis and will thus be somewhat vague by design. The reason this is a exploratory hypothesis is we do not have enough existing research or theory to provide a more specific hypothesis. Nevertheless, we outline in the new section on control variables (quoted \hyperlink{r4c8}{Reviewer 4 Comment 8 above}) some rationals for why should look at potential heterogeneous relationships but important demographics.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c10}{}
+
+Table 1: Needs to be reorganized for clarity. For example, why is Achievement under the SES heading? Also rename categories where appropriate. For example, Female category should be named Gender since authors list each gender separately underneath this header.
+
+  }
+```
+This is a good point re gender. We have now made this change and considered the naming of the other categories.
+
+Achievement, however, is not listed under SES as a heading. The only row subsumed under SES is the indented unknown which is the number of participants with missing data for this variable.
+
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c11}{}
+
+P. 12, PV use: Why did the authors use only 5 of the 10 PVs for the 2015 cohort? Further explanation of the method and justification for this choice is needed.
+
+  }
+```
+The rationale for this was that it allowed us to directly test for potential cohort effects. In PISA 2003 achievement was represented from 5 plausible values for math, reading, and science. In PISA 2015 the OECD extracted 10 rather than 5 plausible values (PVS). This was despite having a similar underlying model used to genertate the PVs. Selecting a random 5 PVS from the 2015 PISA cycle allowed us to integrate the data across these two cohort. This was important when we had only 5 imputations (assigning 1 PV to each imputation). As suggested by the reviewer, we now have thirty imputations. Thus, we now use all ten imputations. For the 2003 cohort, each PV appears in six imputations (five plausible values for 30 imputations). For the 2015 cohort, each PV appears in 3 imputaitons (10 PVs for 30 imputations). This is now covered in the manuscript:
+
+`r get_revision('achievement')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c12}{}
+
+Did the attrition sample vary from those who chose to remain in LSAY on any of the key study variables?
+
+  }
+```
+We now provide summarized information on this in the paper and a table of differences in the supplementary materials. The added text in the paper reads:
+
+`r get_revision('missinfo')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c13}{}
+
+Five imputations for a sample that is missing outcome measures on ~50\% of the sample seems very limited. Further justification is needed for this decision.
+
+  }
+```
+We apologies for this confusion. There are in effect two separate samples here. The PISA sample and the LSAY sample. The LSAY sample is a sub-sample of the PISA sample and, as stated, we defined the sample of interest as the LSAY sample. From here attrition was relatively minimal. Nevertheless we now use 30 imputations.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c14}{}
+
+Please define the term "urban youth" and describe how this was operationalized. Also, does this mean the referent group includes rural and suburban participants? Further info is needed.
+
+  }
+```
+The description is based on the definition of postcodes from the Australian Bureau of Statistics. Here we define urban as people living in a major urban center (typically a state capital). This would include surrounding suburbs and accounts for approximately 70% of the Australian population. We have change urban to major urban center. We also give more detail in the methodology:
+
+`r get_revision('sampleDescription')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c15}{}
+
+How was high SES determined? Please describe.
+
+  }
+```
+We apologies for the confusion. We assume this refers to SES and not the sensitivity analysis done with social class.
+
+If so we do not mean high as a discreet category but rather that SES is positively related to belonging for example. We change this to say "youth who come from higher SES backgrounds" throughout.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c16}{}
+
+The differences displayed in Figure 2 are labeled as trivial. However, the 2015 estimates are in the negatives while the 2003 estimates hover around zero. Is this truly trivial?
+
+  }
+```
+The effect the reviewer refers to is the cohort effect which we agree not trivial. We do highlight in the paper that this is effect is quite large. What is represented in this figure and is described as trivial in the results is the *cohort by achievement interaction*. That is the cohort effects do not differ much by achievement levels. As can be seen in this figure the confidence intervals for marginal effects for each achievement level all overlap.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c17}{}
+
+Further justification is needed for collapsing across cohorts. Have the authors considered presenting models separately for 2003 and 2015? Authors state the model controlling for cohort had a better fit than the multigroup models. This does not adequately justify the decision to collapse. A twelve-year gap between cohorts could indeed be meaningful. The finding that the 2015 cohort was 1.5 times more likely to yield NEET participants at some point than the 2003 cohort supports a decision to present separate models as does the increase in minimum age for dropout between the two cohorts.
+
+  }
+```
+As we note in the paper we do not merely control for cohort we also explore whether the effects of interest vary by cohort. This is equivalent to testing the models separately. Consider:
+
+$$ y = \alpha + \beta_1X + \beta_2Z + \beta_3XZ$$
+
+where y is a continuous outcome of interest; x is a continuous predictor of interest; and z is a dichotomous variable (e.g., the cohort dummy in our case) gives equivalent conditional estimates to:
+
+$$(y | z = 0) = \alpha + \beta_1X$$
+
+and
+
+$$ (y | z = 1) = \alpha + \beta_1X$$
+
+Thus, we do indeed test the hypothesis the reviewer requests. We found on only two occasions that regression estimates differ by cohort (for achievement and for gender) and as shown in Figure 2 these *interactions* are trivial and are associated with the influence of covariates only. There were no significant interactions for the focal parameters indicating that belonging was associated with NEET status similarly in both cohorts. This provides empirical justification for combining the cohorts.
+
+Although the above equations give identical point estimates, there are good reasons to use an interaction rather than separate models. Namely, by using an interaction on the whole sample you retain the power of the whole sample in estimating conditional means from the model. For an example, in the free R program, you can run the following code which shows identical conditional means but tighter confidence intervals:
+
+    library(ggeffects)
+    data(iris)
+    head(iris) 
+
+    #Interaction gives the same conditional means but
+    # less uncertainty than individual models
+    m1 <- lm(Sepal.Length~Sepal.Width*Species, iris)
+    ggeffect(m1, terms = c("Sepal.Width [2]","Species"))
+    #Indvidual models
+    m2.setosa <- lm(Sepal.Length~Sepal.Width, iris,
+    subset = iris$Species == 'setosa')
+    ggeffect(m2.setosa, terms = c("Sepal.Width [2]"))
+    m2.versicolor <- lm(Sepal.Length~Sepal.Width, iris,
+    subset = iris$Species == 'versicolor')
+    ggeffect(m2.versicolor, terms = c("Sepal.Width [2]"))
+    m2.virginica <- lm(Sepal.Length~Sepal.Width, iris,
+    subset = iris$Species == 'virginica')
+    ggeffect(m2.virginica, terms = c("Sepal.Width [2]"))
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c18}{}
+
+P. 17 - Re: Multicollinearity: Were multicollinearity diagnostics run or are the authors simply relying on the correlation between the two? Please clarify. Also, if HS SES and achievement were truly multicollinear, then the authors need stronger justification for including both in the model. Did the authors run the model separately alternating the inclusion of each of these variables to see if the results remained consistent? Did the authors consider creating a composite of these two variables as a measure of "school context" as they suggest? What other trouble-shooting was done to address this problem?
+
+  }
+```
+Multicollinearity among covariates is an interesting area of nuance. As we note in the paper, the multicollinearity that we mention in the paper is actually beneficially when the covariance is among control variables. In particular, we cite the work of Bollinger & Minier [-@bollinger2015] who show that controlling for a set of highly correlated proxies of a potential confounder of interest increases the precision of the central parameter of interest. Put simply, the association between belonging and NEET status is better estimated by including several highly correlated proxies of the school context where the school context was a potentially critical confounding source of variance. In the original submission we showed this improvement was likely negligible as models with just school average SES or just school average achievement gave essentially identical results for the focal parameters. Thus, yes, we did run the models separately as suggested.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c19}{}
+
+Moderator analyses: Were there any particular reasons why the authors suspected the effect of belonging on NEET would vary by the six moderators tested? Did they have any specific hypotheses for these moderators?
+
+
+  }
+```
+As noted above (\hyperlink{r4c9}{Reviewer 4 Comment 9}) this is largely exploratory but we do outline some potential rationals in the introduction:
+
+`r get_revision('controls')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c20}{}
+
+P. 18: The authors set up the paper to suggest they are interested in high school graduation as a mechanism and indeed even name the first paragraph on this page as such. Yet they do not test this mediation. This is misleading. The authors should consider either running these analyses as they set up the study or dropping this focus from the paper.
+
+  }
+```
+As noted in the paper, the mediation analysis was part of the pre-registered plan. However, in the original model, belonging as a predictor of school graduation did not have confidence intervals well separated from zero and so we did not meet the first assumptions of testing mediation. However, in adding 30 imputations and the additional changes requested, the confidence intervals for belonging no longer include zero. Thus we now provide full mediation results. Despite this, over 75% of the total effect of belonging on NEET does not go through school graduation. This means most of the association between school belonging and NEET is not due to differences in high-school graduation rates. As such our interpretation of the results is retained. That is that belonging appears to influence NEET status largely by mechanisms beyond simply blocking of educational progression. The results now state:
+
+`r get_revision('mediate')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c21}{}
+
+Add p-values to tables B1-F1. Also name Gender dummy whatever 1 is on that code.
+
+
+  }
+```
+In relation to the coding of gender this is a good point. We now make the change suggested by the reviewer.
+
+In relation to p-values, this is no longer recommended practice by the American Statistical Association [@wasserstein2016]. The confidence intervals are generally easier to interpret, preclude common misunderstandings about p-values, avoids stargazing (scanning tables for indicators of significance and ignoring both estimates and their associated uncertainties), and provide the same information as p-values but in a less misleading manner. Thus, we would prefer to retain confidence intervals only.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c22}{}
+
+Why is Urban entered twice in the regressions presented in B1-E1? Also many spelling errors in these tables.
+
+
+  }
+```
+Apologies. Urban was not entered twice in the model but the R code we used to generate the tables mistakenly introduced a copy and paste error. We apologize for this and have now fixed the issue. Likewise with the spelling errors referred to.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c23}{}
+
+How was unemployment/loss of work/childbirth accounted for in NEET status. Were those who lost work and seeking employment combined with those who did not ever join the workforce or who were not seeking employment or those who were staying home with an infant?
+
+  }
+```
+Correct. As noted above (\hyperlink{r1c9}{Reviewer 1 Comment 9}) the NEET category is a encompassing definition aimed to capture "a broad range of vulnerabilities". This definition has now been clarified:
+
+`r get_revision('neetdef')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c24}{}
+
+P. 20: Authors discuss findings that Indigenous Youth had higher sense of belonging when controlling for SES but had low belonging overall. Have the authors considered testing this interaction to account for these potential nuances in the findings?
+
+  }
+```
+We tested the reviewers suggestion and found that there was not a reliable interaction between Indigenous status and SES ($\beta$ = -.012 [-.088, .064]). However, we are not sure that an interaction would tease apart our findings in any case. An interaction would test whether SES was associated with belonging differently for Indigenous and non-Indigenous youth. Our findings don't address this point. What our models show is that, on average, Indigenous youth report lower levels of school belonging. However, we know that SES is also positively related to belonging. Thus, the model we test that includes both Indigenous status and SES provides a test of the association between Indigenous and non-Indigenous youth with the same levels of SES. It is in this comparison that Indigenous youth have higher levels of school belonging that non-Indigenous youth who have the same level of SES. This may suggest that, for example, Indigenous youth have particular strengths that provide them some protection against the influence of SES on school belonging.
+
+
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c25}{}
+
+There are some hints throughout the manuscript that the authors may have some interest in equity issues. However, the primary sense that the authors give is that people who are NEET are mainly just an economic burden and that a lowered belonging or identification with school is a personal character flaw rather than a result of systemic issues of oppression and inequity. For example, p. 21, "Given that about 10\% of Australian youth aged 15-24 are NEET, costing the economy over \$16 billion a year, this is a notable effect." Also on p. 21, "may signal that a particular youth lacks the identity capital required to…". Is this the authors' intended framing? If not, I would suggest that the authors incorporate their DEI efforts more completely throughout the manuscript and tone down the deficit approach and the negative framing.
+
+  }
+```
+The paper specifically set out to challenge deficit orientation and our focus on the politics of belonging aimed specifically to frame school belonging in relation to systemic issues (see details in \hyperlink{r2c2}{Reviewer 2 Comment 2}). We agree that our framing could use some work and we could center an anti-deficit position earlier and more clearly. We have made changes throughout the manuscript including removing reference to the economic costs of NEET. For example, the introductory paragraph reads:
+
+`r get_revision('newintro')`
+
+and the conclusion reads;
+
+`r get_revision('conclusion')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c26}{}
+
+P. 21, "social costs of belonging": What does this mean?
+
+  }
+```
+Apologies. This was badly written. We have corrected this section:
+
+`r get_revision('socialcost')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c27}{}
+
+P. 21, "be due to the politics of belonging where some identities are placed at the margins of society". Are the authors suggesting school identity is at the margin of society? Clearer language and more concrete examples to support these explanations is needed.
+
+
+  }
+```
+Other reviewers noted that our use of the term margins of society was poorly chosen. We agree and have now removed this section as part of the revision. As noted above (\hyperlink{r2c2}{Reviewer 2 Comment 2}), we have significantly streamlined the section on the politics of belonging.
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c28}{}
+
+P. 22, "accumulation of disadvantage": It seems that the authors may be referring to indigenous youth who are low SES here. But earlier they make the point to say that after controlling for SES indigenous youth actually had higher sense of belonging along with girls, "urban" youth, and immigrants. So is it truly an "accumulation" of disadvantage or does it all boil down to SES? The authors may wish to reassess what characteristics they are considering a disadvantage and what could potentially be strengths. Some interaction terms can help their interpretation of the findings to assess the intersections of these factors. Did the authors truly not have the power to detect any interactions?
+
+  }
+```
+No the 'accumulation of disadvantage' section is not specifically about Indigenous children (or other axes of disadvantage) but about children who experience low levels of school belonging and the impact this may have on their pathways from high-school. What we mean is that feeling isolated at school is a negative experience. This negative experience can be made worse if feeling of isolation lead an individual to be vulnerable to other negative outcomes. For example, a student who feels isolated at school may be excluded from school ties (with teachers and other peers for example) that can assist them in the adjustment to university. This may make this transition more difficult and increase the chance of dropping out. We have tried to clarify this in the discussion to read:
+
+`r get_revision('fringe')`
+
+```{=tex}
+\RC{\stepcounter{C}\underline{Comment \arabic{C}.} 
+\vspace{-0.1cm}
+\hypertarget{r4c29}{}
+
+P. 22, "those raised on the fringes of society." What exactly does this mean and who are the authors referring to?
+
+
+  }
+```
+This language has now been removed from the paper.
+
+\clearpage
+
+# References
+
+\begingroup
+
+::: {#refs}
+:::
+
+\endgroup

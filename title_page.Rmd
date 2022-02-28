@@ -1,0 +1,26 @@
+---
+title             : "School Belonging Predicts whether an Emerging Adult will be Not in Education, Employment, or Training (NEET) after School"
+shorttitle        : "School Belonging and NEET"
+wordcount         : "`r wordcountaddin::word_count('manuscript.Rmd')`"
+keywords          : "school belonging; NEET; emerging adults; longitudinal"
+abstract: |
+  Children who are excluded from school may end up being excluded from other social institutions. Yet little research has considered whether low school belonging is a risk factor for not being in education, employment, or training after graduation. Using two longitudinal cohorts from Australia (*N* = `r targets::tar_load(combined_data); prettyNum(nrow(combined_data), big.mark=",",scientific=FALSE)`; 51% Boys), we explored this relationship. Controlling for a range of individual and school level covariates, we found that low school belonging at age 15 is a consistent and practically significant predictor of NEET status at ages 16-20. We conclude that this relationship is unlikely to be the product of low school belonging lowering the chances of students graduating high-school. Rather, low school belonging had a unique association with NEET beyond graduation. Given that NEET represents a range of vulnerabilities, educational policy and practice must find ways for schools to create opportunities for all students to feel included, valued, and accepted.
+  
+  **Educational Impact and Implications Statement**
+  
+  Every child has the right to belong. Ensuring that all children feel like they belong at school is a central goal of education. This is because of the importance of belonging for children’s total wellbeing. In this research, we provide evidence that school belonging is an important predictor of whether a young person will not go on to further education, employment, or training (otherwise known as NEET) after leaving compulsory schoolings. We show that school belonging is a stronger predictor than socioeconomic status. We also show that students who feel like they belong at school are less likely to become NEET even if they don’t graduate from high-school. This implies that educational policy needs to focus on ensuring that all children feel supported, valued, and included.
+  
+csl               : "apa7.csl"
+documentclass     : "apa7"
+output:
+  papaja::apa6_pdf:
+    pandoc_args: ['--metadata-file=code/common.yaml']
+    keep_md: yes
+bibliography: code/references.bib
+header-includes:
+  - \usepackage{rotating}
+  - \DeclareDelayedFloatFlavor{sidewaysfigure}{figure}
+  - \hypersetup{colorlinks = false,pdfborder={1 1 1}}
+  - \note{\clearpage}
+---
+

@@ -81,5 +81,13 @@ tar_pipeline(
   tar_target(
     neet_sch_ach,
     neet_models_sch_ach(data_long)
+  ),
+  tar_target(
+    mediation,
+    mediation(neet_sch_grad,sch_grad_model)
+  ),
+  tar_target(
+    miss_map,
+    miss_map()
   )
 )

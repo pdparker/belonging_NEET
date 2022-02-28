@@ -119,16 +119,31 @@ get_lsay2003_data <- function(){
            math3 = PV3MATH,
            math4 = PV4MATH,
            math5 = PV5MATH,
+           math6 = PV1MATH,
+           math7 = PV2MATH,
+           math8 = PV3MATH,
+           math9 = PV4MATH,
+           math10 = PV5MATH,
            read1 = PV1READ,
            read2 = PV2READ,
            read3 = PV3READ,
            read4 = PV4READ,
            read5 = PV5READ,
+           read6 = PV1READ,
+           read7 = PV2READ,
+           read8 = PV3READ,
+           read9 = PV4READ,
+           read10 = PV5READ,
            sci1 = PV1SCIE,
            sci2 = PV2SCIE,
            sci3 = PV3SCIE,
            sci4 = PV4SCIE,
            sci5 = PV5SCIE,
+           sci6 = PV1SCIE,
+           sci7 = PV2SCIE,
+           sci8 = PV3SCIE,
+           sci9 = PV4SCIE,
+           sci10 = PV5SCIE,
            schid = SCHOOLID,
            xlfs2004 = XLFS2004,
            xlfs2005 = XLFS2005,
@@ -148,7 +163,7 @@ get_lsay2003_data <- function(){
            sch_grad4 = X1222007,
            starts_with("ST27Q0")
     ) %>%
-    mutate(across(math1:sci5, .scale)) %>%
+    mutate(across(math1:sci10, .scale)) %>%
     mutate(HISEI = replace(HISEI, HISEI > 96, NA_real_)) %>%
     left_join(.,egp) %>%
     select(-HISEI) %>%
@@ -172,6 +187,11 @@ get_lsay2003_data <- function(){
            pc3 = principal(.[,c('math3','sci3','read3')])$score %>% as.vector,
            pc4 = principal(.[,c('math4','sci4','read4')])$score %>% as.vector,
            pc5 = principal(.[,c('math5','sci5','read5')])$score %>% as.vector,
+           pc6 = principal(.[,c('math6','sci6','read6')])$score %>% as.vector,
+           pc7 = principal(.[,c('math7','sci7','read7')])$score %>% as.vector,
+           pc8 = principal(.[,c('math8','sci8','read8')])$score %>% as.vector,
+           pc9 = principal(.[,c('math9','sci9','read9')])$score %>% as.vector,
+           pc10 = principal(.[,c('math10','sci10','read10')])$score %>% as.vector,
            neet1 = case_when(
              xlfs2004 > 1 & xcel2004 == 10 & xcsl2004 == 6 ~ 1,
              is.na(xlfs2004) ~ NA_real_,
@@ -201,7 +221,6 @@ get_lsay2003_data <- function(){
              TRUE ~ 0
            )
     ) %>%
-    #drop_na(neet1) %>%
     mutate(across(starts_with("ST27Q0"), ~replace(.,.>4, NA_real_))) %>%
     group_by(schid) %>%
     mutate(across(pc1:pc5, .mean,.names = "sch_{.col}")) %>%
@@ -238,20 +257,35 @@ get_lsay2015_data <- function(){
            escs = ESCS,
            HISEI,
            math1 = PV1MATH,
-           math2 = PV5MATH,
-           math3 = PV10MATH,
-           math4 = PV8MATH,
-           math5 = PV2MATH,
+           math2 = PV2MATH,
+           math3 = PV3MATH,
+           math4 = PV4MATH,
+           math5 = PV5MATH,
+           math6 = PV6MATH,
+           math7 = PV7MATH,
+           math8 = PV8MATH,
+           math9 = PV9MATH,
+           math10 = PV10MATH,
            read1 = PV1READ,
-           read2 = PV5READ,
-           read3 = PV10READ,
-           read4 = PV8READ,
-           read5 = PV2READ,
+           read2 = PV2READ,
+           read3 = PV3READ,
+           read4 = PV4READ,
+           read5 = PV5READ,
+           read6 = PV6READ,
+           read7 = PV7READ,
+           read8 = PV8READ,
+           read9 = PV9READ,
+           read10 = PV10READ,
            sci1 = PV1SCIE,
-           sci2 = PV5SCIE,
-           sci3 = PV10SCIE,
-           sci4 = PV8SCIE,
-           sci5 = PV2SCIE,
+           sci2 = PV2SCIE,
+           sci3 = PV3SCIE,
+           sci4 = PV4SCIE,
+           sci5 = PV5SCIE,
+           sci6 = PV6SCIE,
+           sci7 = PV7SCIE,
+           sci8 = PV8SCIE,
+           sci9 = PV9SCIE,
+           sci10 = PV10SCIE,
            schid = CNTSCHID,
            xlfs2016 = XLFS2016,
            xlfs2017 = XLFS2017,
@@ -271,7 +305,7 @@ get_lsay2015_data <- function(){
            sch_grad4 = X1222019,
            starts_with("ST034Q0")
     ) %>%
-    mutate(across(math1:sci5, .scale)) %>%
+    mutate(across(math1:sci10, .scale)) %>%
     mutate(HISEI = replace(HISEI, HISEI > 96, NA_real_)) %>%
     left_join(.,egp) %>%
     select(-HISEI) %>%
@@ -296,6 +330,11 @@ get_lsay2015_data <- function(){
            pc3 = principal(.[,c('math3','sci3','read3')])$score %>% as.vector,
            pc4 = principal(.[,c('math4','sci4','read4')])$score %>% as.vector,
            pc5 = principal(.[,c('math5','sci5','read5')])$score %>% as.vector,
+           pc6 = principal(.[,c('math6','sci6','read6')])$score %>% as.vector,
+           pc7 = principal(.[,c('math7','sci7','read7')])$score %>% as.vector,
+           pc8 = principal(.[,c('math8','sci8','read8')])$score %>% as.vector,
+           pc9 = principal(.[,c('math9','sci9','read9')])$score %>% as.vector,
+           pc10 = principal(.[,c('math10','sci10','read10')])$score %>% as.vector,
            schid = as.character(schid),
            neet1 = case_when(
              xlfs2016 > 1 & xcel2016 == 10 & xcsl2016 == 6 ~ 1,
@@ -330,7 +369,7 @@ get_lsay2015_data <- function(){
     #drop_na(neet1) %>%
     mutate(across(starts_with("ST034Q0"), ~replace(.,.>4, NA_real_))) %>%
     group_by(schid) %>%
-    mutate(across(pc1:pc5, .mean,.names = "sch_{.col}")) %>%
+    mutate(across(pc1:pc10, .mean,.names = "sch_{.col}")) %>%
     mutate(sch_escs = .mean(escs)) %>%
     ungroup() %>%
     select(-xlfs2016:-xcsl2019)
@@ -344,14 +383,13 @@ get_lsay2015_data <- function(){
   
   lsay2015 = lsay2015 %>% select(-starts_with("ST034Q0"))
   
-  
   return(lsay2015)
 }
 
 combine_lsay <- function(lsay2003, lsay2015){
   lsay_combined = bind_rows(lsay2003, lsay2015,.id = "cohort") %>%
     mutate(cohort = ifelse(cohort == 1, "cohort_2003", "cohort_2015")) %>%
-    select(-math1:-sci5) %>%
+    select(-math1:-sci10) %>%
     mutate(across(everything(),haven::zap_labels)) %>%
     mutate(across(everything(),haven::zap_label)) %>%
     mutate(sex = as.factor(sex),
@@ -396,14 +434,15 @@ table_one <- function(data){
     mutate(across(starts_with('neet'), ~as.numeric(.)-1))%>% 
     mutate(ever_neet = neet1+neet2+neet3+neet4,
            ever_neet = ifelse(ever_neet > 0, "NEET", "not NEET")) %>% 
-    select(ever_neet, Girl = sex, Indigenous = indig,`Immigrant Background` = immig,
-           Urban = loc, SES = escs, Achievement = pc1,
-           `School Avg Achievement` = sch_pc1,
+    select(ever_neet, Belonging = belong, `Gender Identification` = sex, 
+           `Indigenous Status` = indig,`Immigrant Status` = immig,
+           Place = loc, SES = escs, Achievement = pc1,
+           `School Avg. Achievement` = sch_pc1,
            `School Avg. SES` = sch_escs) %>%
-    mutate(Girl = ifelse(Girl == 2, 'Girl', 'Boy'),
-           Indigenous = ifelse(Indigenous == 1, 'Indigenous', 'non-Indigenous'),
-           `Immigrant Background` = ifelse(`Immigrant Background` == 1, 'Immigrant', 'non-Immigrnat'),
-           Urban = ifelse(Urban == 1, 'Urban', 'Provincial')) %>%
+    mutate(`Gender Identification` = ifelse(`Gender Identification` == 2, 'Girl', 'Boy'),
+           `Indigenous Status` = ifelse(`Indigenous Status` == 1, 'Indigenous', 'non-Indigenous'),
+           `Immigrant Status` = ifelse(`Immigrant Status` == 1, 'Immigrant', 'non-Immigrnat'),
+           Place = ifelse(Place == 1, 'Major Urban', 'Provincial')) %>%
     tbl_summary(by = ever_neet) %>%
     add_p() 
   
@@ -414,8 +453,18 @@ mice_impute <- function(data) {
   ini <- mice(data,maxit=0)
   pred1 <- ini$predictorMatrix
   pred1[,'schid'] <- 0
+  pred1[,'pc6'] <- 0
+  pred1[,'pc7'] <- 0
+  pred1[,'pc8'] <- 0
+  pred1[,'pc9'] <- 0
+  pred1[,'pc10'] <- 0
+  pred1[,'sch_pc6'] <- 0
+  pred1[,'sch_pc7'] <- 0
+  pred1[,'sch_pc8'] <- 0
+  pred1[,'sch_pc9'] <- 0
+  pred1[,'sch_pc10'] <- 0
   
-  lsay_combined_imputed <- mice(data, pred = pred1)
+  lsay_combined_imputed <- mice(data, pred = pred1, m = 30)
   
   return(lsay_combined_imputed)
 }
@@ -437,17 +486,18 @@ data_long <- function(data){
     group_split(`.imp`)
   
   data_long2 = list()
-  for (i in seq_along(data_long)){
-    if(i == 1){j =1
-    }else{j = i-1}
+  m = length(data_long)
+  for (i in 0:(m-1)){
+    print(i)
+   j = i %% 10 + 1
     var = glue::glue("pc{j}")
     sch_var = glue::glue("sch_pc{j}")
-    tmp = data_long[[i]] %>%
+    tmp = data_long[[i+1]] %>%
       select(everything(),
              pc = var,
              sch_pc = sch_var)
     
-    data_long2[[i]] = tmp
+    data_long2[[i+1]] = tmp
     
   }
   
@@ -479,8 +529,8 @@ neet_models_m1 <- function(data){
   julia$library("JellyMe4")
   
   fit <- list()
-  
-  for ( i in 1:5){
+  m = length(data)
+  for ( i in 1:m){
     d = data[[i]] %>%
       dplyr::mutate(id = as.factor(id),
              schid = as.factor(schid))
@@ -503,7 +553,8 @@ neet_models_m2 <- function(data){
   
   fit <- list()
   
-  for ( i in 1:5){
+  m = length(data)
+  for ( i in 1:m){
     d = data[[i]] %>%
       dplyr::mutate(id = as.factor(id),
                     schid = as.factor(schid))
@@ -526,7 +577,8 @@ neet_models_m3 <- function(data){
   
   fit <- list()
   
-  for ( i in 1:5){
+  m = length(data)
+  for ( i in 1:m){
     d = data[[i]] %>%
       dplyr::mutate(id = as.factor(id),
                     schid = as.factor(schid))
@@ -543,18 +595,20 @@ neet_models_m3 <- function(data){
 }
 
 neet_models_m4 <- function(data){
-  julia <- julia_setup()
-  julia$library("MixedModels")
-  julia$library("JellyMe4")
+  
+  require(lme4)
   
   fit <- list()
   
-  for ( i in 1:5){
+  m = length(data)
+  for ( i in 1:m){
     d = data[[i]] %>%
       dplyr::mutate(id = as.factor(id),
-                    schid = as.factor(schid))
+                    schid = as.factor(schid)) %>%
+      filter(year == 4)
     
-    fit[[i]] = jmer(formula(neet ~ sch_grad+year+pc+escs+sex+loc+indig+immig+belong+cohort+sch_escs+sch_pc+(1|id)+(1|schid)), d)
+    fit[[i]] = glmer(formula(neet ~ sch_grad+pc+escs+sex+loc+indig+immig+belong+cohort+sch_escs+sch_pc+(1|schid)),
+                     d, family = binomial('probit'))
   }
   
   res <- mitml::testEstimates(fit, var.comp = TRUE)
@@ -567,18 +621,19 @@ neet_models_m4 <- function(data){
 
 
 neet_models_m5 <- function(data){
-  julia <- julia_setup()
-  julia$library("MixedModels")
-  julia$library("JellyMe4")
+  require(lme4)
   
   fit <- list()
   
-  for ( i in 1:5){
+  m = length(data)
+  for ( i in 1:m){
     d = data[[i]] %>%
       dplyr::mutate(id = as.factor(id),
-                    schid = as.factor(schid))
+                    schid = as.factor(schid))%>%
+      filter(year == 4)
     
-    fit[[i]] = jmer(formula(sch_grad ~ year+pc+escs+sex+loc+indig+immig+belong+cohort+sch_escs+sch_pc+(1|id)+(1|schid)), d)
+    fit[[i]] = glmer(formula(sch_grad ~ pc+escs+sex+loc+indig+immig+belong+cohort+sch_escs+sch_pc+(1|schid)),
+                     d, family = binomial(link = 'probit'))
   }
   
   res <- mitml::testEstimates(fit, var.comp = TRUE)
@@ -589,11 +644,75 @@ neet_models_m5 <- function(data){
   
 }
 
+neet_models_m6 <- function(data){
+  julia <- julia_setup()
+  julia$library("MixedModels")
+  julia$library("JellyMe4")
+  
+  fit <- list()
+  m = length(data)
+  for ( i in 1:m){
+    d = data[[i]] %>%
+      dplyr::mutate(id = as.factor(id),
+                    schid = as.factor(schid))
+    
+    fit[[i]] = jmer(formula(neet ~ belong+year+pc+escs*indig+sex+loc+immig+sch_escs+sch_pc+cohort+(1|id)+(1|schid)), d)
+  }
+  
+  res <- mitml::testEstimates(fit, var.comp = TRUE)
+  
+  out <- list(fit = fit, summary = res)
+  
+  return(out)
+  
+}
+
+mediation <- function(neet_sch_grad,sch_grad_model){
+  m <- length(neet_sch_grad$fit)
+  
+  mediate <- c()
+  direct <- c()
+  pb <- progress::progress_bar$new(total = m)
+  
+  for (i in 1:m){
+    
+    pb$tick()
+    
+    a1 <- arm::sim(sch_grad_model$fit[[i]])
+    b1 <- arm::sim(neet_sch_grad$fit[[i]])
+    
+    a1 <- a1@fixef %>% as_tibble()
+    b1 <- b1@fixef %>% as_tibble()
+    
+    mediate<- c(mediate, a1$belong * b1$sch_grad1)
+    direct<- c(direct,b1$belong)
+  }
+  
+  out <- tibble(mediate, direct) %>%
+    mutate(total = mediate + direct,
+           prop = mediate/total*100) %>%
+    dplyr::summarise(across(everything(),
+                            list(lowci = ~quantile(.,.025),
+                                 estimate = ~mean(.),
+                                 highci = ~quantile(.,.975))
+    )
+    ) %>%
+    pivot_longer(cols = everything(),
+                 names_to = c("estimate", 'statistic'),
+                 names_sep = "_") %>%
+    pivot_wider(id_cols = "statistic", 
+                names_from = "estimate",
+                values_from = "value")
+  return(out)
+  }
+
+
 gee_model <- function(data){
   require(geepack)
   fit <- list()
   
-  for ( i in 1:5){
+  m = length(data)
+  for ( i in 1:m){
     d = data[[i]] %>%
       dplyr::mutate(id = as.factor(id),
                     schid = as.factor(schid),
@@ -615,7 +734,8 @@ neet_models_socclass <- function(data){
   
   fit <- list()
   
-  for ( i in 1:5){
+  m = length(data)
+  for ( i in 1:m){
     d = data[[i]] %>%
       dplyr::mutate(id = as.factor(id),
                     schid = as.factor(schid))
@@ -639,7 +759,8 @@ neet_models_sch_ses <- function(data){
   
   fit <- list()
   
-  for ( i in 1:5){
+  m = length(data)
+  for ( i in 1:m){
     d = data[[i]] %>%
       dplyr::mutate(id = as.factor(id),
                     schid = as.factor(schid))
@@ -663,7 +784,8 @@ neet_models_sch_ach <- function(data){
   
   fit <- list()
   
-  for ( i in 1:5){
+  m = length(data)
+  for ( i in 1:m){
     d = data[[i]] %>%
       dplyr::mutate(id = as.factor(id),
                     schid = as.factor(schid))
@@ -678,4 +800,175 @@ neet_models_sch_ach <- function(data){
   return(out)
   
 }
+
+miss_map <- function(){
+  lsay2003 = cloud_get(user = cloudstor_user,
+                       password = cloudstor_password,
+                       dest = 'lsay2003.sav',
+                       cloud_address = 'https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/Databases/LSAY-v10/LSAY2003/lsay2003.sav') %>%
+    select(belong = BELONG,
+           sex = SEX,
+           indig = INDIG,
+           loc = LOC, 
+           immig = IMMIG,
+           escs = ESCS,
+           HISEI,
+           math1 = PV1MATH,
+           math2 = PV2MATH,
+           math3 = PV3MATH,
+           math4 = PV4MATH,
+           math5 = PV5MATH,
+           math6 = PV1MATH,
+           math7 = PV2MATH,
+           math8 = PV3MATH,
+           math9 = PV4MATH,
+           math10 = PV5MATH,
+           read1 = PV1READ,
+           read2 = PV2READ,
+           read3 = PV3READ,
+           read4 = PV4READ,
+           read5 = PV5READ,
+           read6 = PV1READ,
+           read7 = PV2READ,
+           read8 = PV3READ,
+           read9 = PV4READ,
+           read10 = PV5READ,
+           sci1 = PV1SCIE,
+           sci2 = PV2SCIE,
+           sci3 = PV3SCIE,
+           sci4 = PV4SCIE,
+           sci5 = PV5SCIE,
+           sci6 = PV1SCIE,
+           sci7 = PV2SCIE,
+           sci8 = PV3SCIE,
+           sci9 = PV4SCIE,
+           sci10 = PV5SCIE,
+           miss = ACH04WTP,
+           schid = SCHOOLID,
+    ) %>%
+    dplyr::mutate(across(math1:sci10, .scale)) %>%
+    mutate(HISEI = replace(HISEI, HISEI > 96, NA_real_),
+           miss = ifelse(is.na(miss),"PISA","LSAY")) %>%
+    left_join(.,egp) %>%
+    select(-HISEI) %>%
+    mutate(egp = case_when(
+      egp < 3 ~ "salariat",
+      egp == 3 ~ "intermediate",
+      is.na(egp) ~ NA_character_,
+      TRUE ~ "working"
+    ) %>% as.factor()) %>%
+    relocate(egp,.before = escs) %>%
+    mutate(belong = replace(belong, belong > 900, NA_integer_),
+           escs = replace(escs, escs > 900, NA_integer_),
+           loc = ifelse(loc == 1, 1, 0),
+           immig = replace(immig, immig > 3, NA_real_),
+           immig = ifelse(immig == 1, 0, 1),
+           pc1 = principal(.[,c('math1','sci1','read1')])$score %>% as.vector
+    ) %>%
+    group_by(schid) %>%
+    mutate(sch_pc1 = .mean(pc1)) %>%
+    mutate(sch_escs = .mean(escs)) %>%
+    ungroup() %>%
+    select(-math1:-sci10, -schid)
+  
+  lsay2015 = cloud_get(user = cloudstor_user,
+                       password = cloudstor_password,
+                       dest = 'lsay2003.sav',
+                       cloud_address = 'https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/lsay/lsay2015_v4.sav') %>%
+    select(belong = BELONG,
+           sex = ST004D01T,
+           indig = INDIG,
+           immig = IMMIG,
+           loc = `GEOLOC_3`, 
+           escs = ESCS,
+           HISEI,
+           math1 = PV1MATH,
+           math2 = PV2MATH,
+           math3 = PV3MATH,
+           math4 = PV4MATH,
+           math5 = PV5MATH,
+           math6 = PV6MATH,
+           math7 = PV7MATH,
+           math8 = PV8MATH,
+           math9 = PV9MATH,
+           math10 = PV10MATH,
+           read1 = PV1READ,
+           read2 = PV2READ,
+           read3 = PV3READ,
+           read4 = PV4READ,
+           read5 = PV5READ,
+           read6 = PV6READ,
+           read7 = PV7READ,
+           read8 = PV8READ,
+           read9 = PV9READ,
+           read10 = PV10READ,
+           sci1 = PV1SCIE,
+           sci2 = PV2SCIE,
+           sci3 = PV3SCIE,
+           sci4 = PV4SCIE,
+           sci5 = PV5SCIE,
+           sci6 = PV6SCIE,
+           sci7 = PV7SCIE,
+           sci8 = PV8SCIE,
+           sci9 = PV9SCIE,
+           sci10 = PV10SCIE,
+           schid = CNTSCHID,
+           miss = ACH16WTP
+    ) %>%
+    dplyr::mutate(across(math1:sci10, .scale)) %>%
+    mutate(HISEI = replace(HISEI, HISEI > 96, NA_real_),
+           miss = ifelse(is.na(miss),"PISA","LSAY")) %>%
+    left_join(.,egp) %>%
+    select(-HISEI) %>%
+    mutate(egp = case_when(
+      egp < 3 ~ "salariat",
+      egp == 3 ~ "intermediate",
+      is.na(egp) ~ NA_character_,
+      TRUE ~ "working"
+    ) %>% as.factor()) %>%
+    relocate(egp,.before = escs) %>%
+    mutate(belong = replace(belong, belong > 900, NA_integer_),
+           escs = replace(escs, escs > 900, NA_integer_),
+           loc = ifelse(loc == 1, 1, 0),
+           immig = replace(immig, immig > 3, NA_real_),
+           immig = ifelse(immig == 1, 0, 1),
+           pc1 = principal(.[,c('math1','sci1','read1')])$score %>% as.vector
+    ) %>%
+    group_by(schid) %>%
+    mutate(sch_pc1 = .mean(pc1)) %>%
+    mutate(sch_escs = .mean(escs)) %>%
+    ungroup() %>%
+    select(-math1:-sci10, -schid)
+  
+  lsay2003 = lsay2003 %>% mutate(indig = factor(indig))
+  lsay2015 = lsay2015 %>% mutate(indig = factor(indig))%>%
+    mutate(indig = ifelse(indig=='9', NA_character_, indig))
+  
+  table = lsay2003%>%
+    bind_rows(lsay2015,.id = "Cohort") %>%
+    mutate(Cohort = ifelse(Cohort == 1, "LSAY 2003","LSAY 2015")) %>%
+    mutate(across(everything(),haven::zap_labels)) %>%
+    mutate(across(everything(),haven::zap_label)) %>%
+    mutate(sex = as.factor(sex),
+           loc = as.factor(loc),
+           immig = as.factor(immig),
+           indig = as.factor(indig),
+           Cohort = as.factor(Cohort)
+    ) %>%
+    select(Missing = miss,Belonging = belong, `Gender` = sex, 
+           `Indigenous Status` = indig,`Immigrant Status` = immig,
+           `Place` = loc, `SES (SD Units)` = escs,
+           `Achievement (SD Units)` = pc1,
+           `School Avg Achievement (SD Units)` = sch_pc1,
+           `School Avg. SES (SD Units)` = sch_escs) %>%
+    mutate(`Gender` = ifelse(Gender == 2, 'Girl', 'Boy'),
+           `Indigenous Status` = ifelse(`Indigenous Status` == 1, 'Indigenous', 'non-Indigenous'),
+           `Immigrant Status` = ifelse(`Immigrant Status` == 1, 'Immigrant', 'non-Immigrnat'),
+           `Place` = ifelse(`Place` == 1, 'Urban', 'Provincial')) %>%
+    tbl_summary(by = Missing) %>%
+    add_p()   
+  
+  return(table)
+}
+
 

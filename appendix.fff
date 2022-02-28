@@ -1,0 +1,25 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{img/belong_2003.png}
+\caption{Belonging Questionnaire in PISA 2003}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{img/belong_2015.png}
+\caption{Belonging Questionnaire in PISA 2015}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{img/unemployment.png}
+\caption{Unemployment time series}
+\end{figure*}

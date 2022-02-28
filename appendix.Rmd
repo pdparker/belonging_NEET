@@ -1,9 +1,25 @@
+---
+title             : "Supplementary Material: School Belonging Predicts whether an Emerging Adult will be Not in Education, Employment, or Training (NEET) Post High-School"
+output:
+  bookdown::pdf_document2:
+    extra_dependencies: ["float"]
+    fig_caption: yes
+    keep_tex: yes
+    
+header-includes:
+- \usepackage{float}
+- \floatplacement{figure}{H}
+---
+
 ```{r include=FALSE}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE, dpi = 300)
+knitr::opts_chunk$set(fig.pos = "!H", out.extra = "")
+options(knitr.table.format = "latex")
 library(targets)
 library(tidyverse)
 library(fuzzyjoin)
 library(papaja)
+library(kableExtra)
 library(broom.mixed)
 library(mitml)
 options(tidyverse.quiet = TRUE)
@@ -18,12 +34,12 @@ name_cleaner <- dplyr::tribble(
   "year", "Time Wave (1-Year Units)",
   "pc", "Achievement (SD Units)",
   "escs", "SES (SD Units)",
-  "sex", "Gender",
-  "loc", "Urban",
-  "indig", "Indigenous",
-  "immig", "Immigrant",
-  "sch_escs", "School Avgerage SES (SD Units)",
-  "sch_pc", "School Avgerage Achievement (Sd Units)",
+  "sex", "Gender (Girls)",
+  "loc1", "Place (Major Urban)",
+  "indig", "Indigenous Status",
+  "immig", "Immigrant Status",
+  "sch_escs", "School Avg. SES (SD Units)",
+  "sch_pc", "School Avg. Achievement (SD Units)",
   "cohortcohort_2015", "Cohort (2015)",
   "Intercept~~Intercept|schid", "Random Intercept: School",
   "Intercept~~Intercept|id", "Random Intercept: Individual",
@@ -33,6 +49,7 @@ name_cleaner <- dplyr::tribble(
   "egpsalariat", "Social class: Salariat",
   "egpworking", "Social class: Working"
 )
+
 ```
 
 # Belonging Question (As they appear in the Student Questionnaire)
@@ -44,6 +61,27 @@ name_cleaner <- dplyr::tribble(
 ## PISA 2015
 
 ![Belonging Questionnaire in PISA 2015](img/belong_2015.png)
+
+# Attrition from PISA to LSAY Sample
+
+(ref:missing) Attrition Statistics from PISA to LSAY Sample.
+
+```{r tab-missing, results='asis'}
+targets::tar_load(miss_map)
+library(gtsummary)
+library(kableExtra)
+
+ miss_map %>%
+   as_kable_extra(caption = "(ref:missing)",
+                             format = "latex",
+                             booktabs = TRUE,
+                             align = c("l", "c", "c", "c")) %>%
+   kable_styling(latex_options = c("repeat_header", "scale_down", "HOLD_position"), 
+              repeat_header_continued = "\\textit{(Continued on Next Page...)}", ) %>%
+    add_footnote("This table is based on the unimputed data. The data summarises scores for participants who were in both the PISA and LSAY samples (LSAY) versus those only in the PISA sample (PISA).") 
+
+```
+
 
 # Social Class Results
 
@@ -70,8 +108,9 @@ bind_rows(c,r) %>%
   relocate(Parameter, .before = "Term") %>%
   select(-Term,-r_word) %>%
   printnum(na_string = "") %>%
-  apa_table(caption = "(ref:neet-soc)",
-            note = "Random intercepts are not in odds-ratio units. Intermediate class is reference class.")
+  kableExtra::kable(caption = "(ref:neet-soc)",booktabs = T) %>%
+  kableExtra::add_footnote("Random intercepts are not in odds-ratio units. Intermediate class is reference class.") %>%
+  kable_styling(latex_options = "HOLD_position")
 
 ```
 
@@ -100,11 +139,11 @@ bind_rows(c,r) %>%
   relocate(Parameter, .before = "Term") %>%
   select(-Term,-r_word) %>%
   printnum(na_string = "") %>%
-  apa_table(caption = "(ref:neet-gee)",
-            note = "Random intercepts are not in odds-ratio units. ")
+  kableExtra::kable(caption = "(ref:neet-gee)",booktabs = T) %>%
+  kableExtra::add_footnote("Random intercepts are not in odds-ratio units. ") %>%
+  kable_styling(latex_options = "HOLD_position")
 
 ```
-
 
 # School Context: Average Achievement
 
@@ -131,8 +170,9 @@ bind_rows(c,r) %>%
   relocate(Parameter, .before = "Term") %>%
   select(-Term,-r_word) %>%
   printnum(na_string = "") %>%
-  apa_table(caption = "(ref:sch-ach-model)",
-            note = "Random intercepts are not in odds-ratio units. ")
+  kableExtra::kable(caption = "(ref:sch-ach-model)",booktabs = T) %>%
+  kableExtra::add_footnote("Random intercepts are not in odds-ratio units. ") %>%
+  kable_styling(latex_options = "HOLD_position")
 
 ```
 
@@ -161,8 +201,9 @@ bind_rows(c,r) %>%
   relocate(Parameter, .before = "Term") %>%
   select(-Term,-r_word) %>%
   printnum(na_string = "") %>%
-  apa_table(caption = "(ref:sch-ses-model)",
-            note = "Random intercepts are not in odds-ratio units. ")
+  kableExtra::kable(caption = "(ref:sch-ses-model)",booktabs = T) %>%
+  kableExtra::add_footnote("Random intercepts are not in odds-ratio units. ") %>%
+  kable_styling(latex_options = "HOLD_position")
 
 ```
 
@@ -191,13 +232,12 @@ bind_rows(c,r) %>%
   relocate(Parameter, .before = "Term") %>%
   select(-Term,-r_word) %>%
   printnum(na_string = "") %>%
-  apa_table(caption = "(ref:sch-grad-model)",
-            note = "Random intercepts are not in odds-ratio units. ")
+  kableExtra::kable(caption = "(ref:sch-grad-model)",booktabs = T) %>%
+  kableExtra::add_footnote("Random intercepts are not in odds-ratio units. ") %>%
+  kable_styling(latex_options = "HOLD_position")
 
 ```
-
 
 # Unemployment Rate
 
 ![Unemployment time series](img/unemployment.png)
-

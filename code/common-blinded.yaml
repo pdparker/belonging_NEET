@@ -9,8 +9,4 @@ draft             : yes
 
 documentclass     : "apa7"
 classoption       : "man"
-
-authornote: |
-  
-
 ---
